@@ -1,0 +1,34 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "my first react app",
+  "main": "Index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justrebeka/reactapp.git"
+  },
+  "author": "rebeka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justrebeka/reactapp/issues"
+  },
+  "homepage": "https://github.com/justrebeka/reactapp#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^7.3.0",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.18.13",
+    "events": "^1.1.1",
+    "flux": "^3.1.2",
+    "object-assign": "^4.1.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "superagent": "^3.5.2"
+  }
+}

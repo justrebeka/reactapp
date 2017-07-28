@@ -1,0 +1,26 @@
+﻿{
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "node": true
+  },
+  "rules": {
+    "quotes": "warn",
+    "no-trailing-spaces": 0,
+    "eol-last": 0,
+    "no-unused-vars": "error",
+    "no-underscore-dangle": 0,
+    "no-alert": 0,
+    "no-lone-blocks": 0
+  },
+  "globals": {
+    "jQuery": true,
+    "$": true
+  }
+
+}

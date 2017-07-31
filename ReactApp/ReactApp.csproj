@@ -223,21 +223,20 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="src\actions\CarActionCreator.jsx" />
-    <Content Include="src\actions\CarServerActionCreator.jsx" />
-    <Content Include="src\api\CarApi.jsx" />
+    <Content Include="src\actions\DemoActionCreator.jsx" />
+    <Content Include="src\actions\DemoServerActionCreator.jsx" />
+    <Content Include="src\api\DemoApi.jsx" />
     <Content Include="src\constants\ActionTypes.jsx" />
     <Content Include="src\dispatcher\AppDispatcher.jsx" />
     <Content Include="src\images\logo.png" />
     <Content Include="src\index.html" />
     <Content Include="src\Index.jsx" />
-    <Content Include="src\js\components\About.jsx" />
+    <Content Include="src\js\components\Demo.jsx" />
     <Content Include="src\js\components\App.jsx" />
-    <Content Include="src\js\components\Car.jsx" />
+    <Content Include="src\js\components\Topic.jsx" />
     <Content Include="src\js\components\Header.jsx" />
-    <Content Include="src\js\components\Sell.jsx" />
     <Content Include="src\Routes.jsx" />
-    <Content Include="src\stores\CarStore.jsx" />
+    <Content Include="src\stores\DemoStore.jsx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -9,7 +9,7 @@ export default class App extends React.Component{
         return (
             <div>
                 <img alt="Brand" src='./images/logo.png' style={{ float: "left" }} /> 
-                <h1> Buy - YoUr - Car </h1>
+                <h1>  React + Flux demo </h1>
                 <br />
 
                 <Header />

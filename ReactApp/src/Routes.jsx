@@ -5,7 +5,7 @@ var React = require("react");
 
 import App from './js/components/App.jsx';
 import Home from './js/components/Home.jsx';
-import About from './js/components/About.jsx';
+import Demo from './js/components/Demo.jsx';
 
 import {
     Switch,
@@ -17,7 +17,7 @@ var Routes = (
     <div>
         <Route path="/" component={App} />
         <Route path="/home" component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/demo" component={Demo} />
 
     </div>
     );

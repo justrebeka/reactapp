@@ -6,12 +6,9 @@ import ReactDOM from 'react-dom';
 export default class Home extends React.Component{
     render() {
         return (
-            <div>
-    <div className="jumbotron">
-        <h2> You can buy a car here.</h2>
-        <h3> Check our deals!</h3>
-    </div> 
-            </div>);
+            <div className="jumbotron">
+                <h3> Check out the demo!</h3>
+            </div> );
 
     }
 }

@@ -14,7 +14,7 @@ namespace ReactApp.Controllers
         {
             System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
 
-            return new string[] { "dacia", "volkswagen","bmw" };
+            return new string[] {"Why React ?", "React concepts","Node.js", "Configuring Gulp", "Why Flux ?", "How Flux works" };
         }
 
         // GET api/values/5

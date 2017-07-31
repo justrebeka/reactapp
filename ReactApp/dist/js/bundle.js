@@ -461,15 +461,10 @@ var Topic = function (_React$Component) {
             return _react2.default.createElement(
                 "div",
                 null,
-                _react2.default.createElement(
-                    "li",
-                    null,
-                    " ",
-                    this.props.index,
-                    " \xA0",
-                    this.props.name,
-                    "\xA0"
-                )
+                this.props.index,
+                ". \xA0",
+                this.props.name,
+                " \xA0"
             );
         }
     }]);

@@ -308,13 +308,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -334,30 +330,30 @@ var Header = function (_React$Component) {
     }
 
     _createClass(Header, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                "div",
                 null,
                 _react2.default.createElement(
-                    'ul',
-                    { className: 'nav nav-tabs' },
+                    "ul",
+                    { className: "nav nav-tabs" },
                     _react2.default.createElement(
-                        'li',
-                        { role: 'presentation' },
+                        "li",
+                        { role: "presentation" },
                         _react2.default.createElement(
-                            'a',
-                            { href: '/#home' },
-                            ' Home'
+                            "a",
+                            { href: "/#home" },
+                            " Home"
                         )
                     ),
                     _react2.default.createElement(
-                        'li',
-                        { role: 'presentation' },
+                        "li",
+                        { role: "presentation" },
                         _react2.default.createElement(
-                            'a',
-                            { href: '/#demo' },
-                            'Demo'
+                            "a",
+                            { href: "/#demo" },
+                            "Demo"
                         )
                     )
                 )
@@ -370,7 +366,7 @@ var Header = function (_React$Component) {
 
 exports.default = Header;
 
-},{"react":241,"react-dom":63}],11:[function(require,module,exports){
+},{"react":241}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -379,13 +375,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -405,15 +397,15 @@ var Home = function (_React$Component) {
     }
 
     _createClass(Home, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'div',
-                { className: 'jumbotron' },
+                "div",
+                { className: "jumbotron" },
                 _react2.default.createElement(
-                    'h3',
+                    "h3",
                     null,
-                    ' Check out the demo!'
+                    " Check out the demo!"
                 )
             );
         }
@@ -424,7 +416,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"react":241,"react-dom":63}],12:[function(require,module,exports){
+},{"react":241}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -461,10 +453,13 @@ var Topic = function (_React$Component) {
             return _react2.default.createElement(
                 "div",
                 null,
-                this.props.index,
-                ". \xA0",
-                this.props.name,
-                " \xA0"
+                _react2.default.createElement(
+                    "li",
+                    { id: this.props.index },
+                    " \xA0",
+                    this.props.name,
+                    " \xA0"
+                )
             );
         }
     }]);

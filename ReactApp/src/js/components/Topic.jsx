@@ -7,7 +7,7 @@ export default class Topic extends React.Component {
 
         return (
             <div>
-               {this.props.index}. &nbsp;{this.props.name} &nbsp;
+                <li id={this.props.index}> &nbsp;{this.props.name} &nbsp;</li>
             </div>
         );
     }

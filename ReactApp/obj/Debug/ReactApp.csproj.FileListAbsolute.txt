@@ -144,3 +144,9 @@ C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\bin\Microsoft.AI.Web.xml
 C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\obj\Debug\ReactApp.csprojResolveAssemblyReference.cache
 C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\obj\Debug\ReactApp.dll
 C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\obj\Debug\ReactApp.pdb
+C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\bin\EntityFramework.dll
+C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\bin\EntityFramework.SqlServer.dll
+C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\bin\EntityFramework.xml
+C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\bin\EntityFramework.SqlServer.xml
+C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\obj\Debug\ReactApp.Migrations.Bike.resources
+C:\Users\rebeka.veres\Source\Repos\reactapp\ReactApp\obj\Debug\ReactApp.csproj.GenerateResource.Cache

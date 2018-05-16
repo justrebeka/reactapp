@@ -17,7 +17,7 @@ namespace ReactApp.Business.Logic
         }
 
 
-        public void AddBike(Business.Model.Bike bike)
+        public void AddBike(Bike bike)
         {
             bikeRepository.AddBike(bike);
         }

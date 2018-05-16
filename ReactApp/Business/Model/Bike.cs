@@ -1,34 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ReactApp.Business.Model
+﻿namespace ReactApp.Business.Model
 {
     public class Bike
     {
         public int Id { get; set; }
         public string Model { get; set; }
-        public int Frame { get; set; }
-        public int Fork { get; set; }
-        public int Handlebar { get; set; }
-        public int Rims { get; set; }
-        public int Saddle { get; set; }
-        public int Pedals { get; set; }
-        public int FrontGear { get; set; }
-        public int RearGear { get; set; }
-        public int ShiftLevers { get; set; }
-        public int Breaks { get; set; }
-        public int BreakLevers { get; set; }
-        public int Chain { get; set; }
-        public int FrameSuspension { get; set; }
-        public int ForkSuspension { get; set; }
-        public int Engine { get; set; }
-        public int Battery { get; set; }
-        public int Computer { get; set; }
-        public int Weight { get; set; }
-        public int MaxLoad { get; set; }
+        public string Frame { get; set; }
+        public string Fork { get; set; }
+        public string Handlebar { get; set; }
+        public string Rims { get; set; }
+        public string Saddle { get; set; }
+        public string Pedals { get; set; }
+        public string FrontShifter { get; set; }
+        public string RearShifter { get; set; }
+        public string ShiftLevers { get; set; }
+        public string Breaks { get; set; }
+        public string BreakLevers { get; set; }
+        public string Chain { get; set; }
+        public string FrameSuspension { get; set; }
+        public string ForkSuspension { get; set; }
+        public string Engine { get; set; }
+        public string Battery { get; set; }
+        public string Computer { get; set; }
+        public int Weight_kg { get; set; }
+        public int MaxLoad_kg { get; set; }
         public int Price { get; set; }
         public int FrameSeries { get; set; }
+        public int RiderHeight_cm { get; set; }
     }
 }

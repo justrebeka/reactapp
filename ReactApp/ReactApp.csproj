@@ -14,8 +14,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReactApp</RootNamespace>
-    <AssemblyName>ReactApp</AssemblyName>
+    <RootNamespace>BikeShop</RootNamespace>
+    <AssemblyName>BikeSHop</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -155,10 +156,25 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Logic\BikeManager.cs" />
+    <Compile Include="Business\Model\Accessories.cs" />
+    <Compile Include="Business\Model\Battery.cs" />
     <Compile Include="Business\Model\Bike.cs" />
+    <Compile Include="Business\Model\BikeAccessoryMap.cs" />
+    <Compile Include="Business\Model\Engine.cs" />
+    <Compile Include="Business\Model\Order.cs" />
+    <Compile Include="Business\Model\PurchasedBikes.cs" />
+    <Compile Include="Business\Model\TestRide.cs" />
+    <Compile Include="Business\Model\User.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\BikeShopContext.cs" />
+    <Compile Include="Data\Model\Accessory.cs" />
+    <Compile Include="Data\Model\Battery.cs" />
     <Compile Include="Data\Model\Bike.cs" />
+    <Compile Include="Data\Model\BikeAccessoryMap.cs" />
+    <Compile Include="Data\Model\Engine.cs" />
+    <Compile Include="Data\Model\Order.cs" />
+    <Compile Include="Data\Model\TestRide.cs" />
+    <Compile Include="Data\Model\User.cs" />
     <Compile Include="Data\Repositories\BikeRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,7 +183,20 @@
     <Compile Include="Migrations\201805100844257_Bike.Designer.cs">
       <DependentUpon>201805100844257_Bike.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805161610179_AddDataENtities.cs" />
+    <Compile Include="Migrations\201805161610179_AddDataENtities.Designer.cs">
+      <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Presentation\Model\Accessories.cs" />
+    <Compile Include="Presentation\Model\Battery.cs" />
+    <Compile Include="Presentation\Model\Bike.cs" />
+    <Compile Include="Presentation\Model\BikeAccessoryMap.cs" />
+    <Compile Include="Presentation\Model\Engine.cs" />
+    <Compile Include="Presentation\Model\Order.cs" />
+    <Compile Include="Presentation\Model\PurchasedBikes.cs" />
+    <Compile Include="Presentation\Model\TestRide.cs" />
+    <Compile Include="Presentation\Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +233,9 @@
     <EmbeddedResource Include="Migrations\201805100844257_Bike.resx">
       <DependentUpon>201805100844257_Bike.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805161610179_AddDataENtities.resx">
+      <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -214,6 +246,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

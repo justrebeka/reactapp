@@ -1,8 +1,6 @@
-﻿using ReactApp.Data.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace ReactApp.Data
 {
@@ -10,7 +8,7 @@ namespace ReactApp.Data
     {
         public List<Business.Model.Bike> GetBikes()
         {
-            var bikes = new List<Bike>();
+            var bikes = new List<Data.Model.Bike>();
             using (var db = new BikeShopContext())
             {
                 // Display all Bikes from the database 
@@ -25,7 +23,7 @@ namespace ReactApp.Data
                 }
             }
 
-            return bikes.Select(b => Bike.ToBusinness(b)).ToList();
+            return bikes.Select(b => Data.Model.Bike.ToBusiness(b)).ToList();
         }
 
         public void AddBike(Business.Model.Bike bike)
@@ -33,7 +31,7 @@ namespace ReactApp.Data
             using (var db = new BikeShopContext())
             {
                 // Create and save a new Bike               
-                db.Bikes.Add(new Bike { Model = bike.Model});
+                db.Bikes.Add(new Data.Model.Bike { Model = bike.Model});
                 db.SaveChanges();
             }
         }

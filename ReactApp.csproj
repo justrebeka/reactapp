@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201805161610179_AddDataENtities.Designer.cs">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805262152112_DatabaseChanges.cs" />
+    <Compile Include="Migrations\201805262152112_DatabaseChanges.Designer.cs">
+      <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\BikeController.cs" />
     <Compile Include="Presentation\Model\Battery.cs" />
@@ -251,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805161610179_AddDataENtities.resx">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805262152112_DatabaseChanges.resx">
+      <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

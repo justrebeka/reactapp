@@ -35,7 +35,7 @@ namespace ReactApp.Data.Model
         public virtual Engine Engine {get; set; }
 
         [ForeignKey("BatteryId")]
-        public virtual Engine Battery { get; set; }
+        public virtual Battery Battery { get; set; }
 
         public static Business.Model.Bike ToBusiness(Bike bike)
         {

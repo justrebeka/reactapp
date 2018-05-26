@@ -5,11 +5,10 @@ using System.Web;
 
 namespace ReactApp.Business.Model
 {
-    public class Order
+    public class Accessory
     {
         public int Id { get; set; }
-        public int Number { get; set; }
-        public DateTime Date { get; set; }
-        public Bike Bike { get; set; }
+        public string Name { get; set; }
+        public AccessoryType Type { get; set; }
     }
 }

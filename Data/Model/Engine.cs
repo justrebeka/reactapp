@@ -13,5 +13,19 @@ namespace ReactApp.Data.Model
         public int MaxSpeed { get; set; }
         public int Power { get; set; }
         public int ElectricVoltage { get; set; }
+		
+		  public static Business.Model.Engine ToBusiness(Engine bike)
+        {
+            return new Business.Model.Engine()
+            {
+                Id = bike.Id,
+                Name = bike.Name,
+                Model = bike.Model,
+                MaxSpeed = bike.MaxSpeed,
+                Power = bike.Power,
+                ElectricVoltage = bike.ElectricVoltage
+
+            };
+        }
     }
 }

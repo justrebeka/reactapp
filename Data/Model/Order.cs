@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,7 +11,10 @@ namespace ReactApp.Data.Model
         public int Id { get; set; }
         public int Number { get; set; }
         public DateTime Date { get; set; }
+        public string Status { get; set; }
+
         public int BikeId { get; set; }
+
         [ForeignKey("BikeId")]
         public virtual Bike Bike { get; set; }
 
@@ -22,7 +26,7 @@ namespace ReactApp.Data.Model
                 Number = bike.Number,
                 Date = bike.Date,
                 Status = bike.Status,
-                Product = bike.Product
+                Bike = Bike.ToBusiness(bike.Bike)
 
             };
         }

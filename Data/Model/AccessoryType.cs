@@ -19,4 +19,5 @@ namespace ReactApp.Data.Model
 
             };
         }
+    }
 }

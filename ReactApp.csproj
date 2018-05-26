@@ -176,43 +176,6 @@
     <Compile Include="Business\Model\TestRide.cs" />
     <Compile Include="Business\Model\User.cs" />
     <Compile Include="Data\Model\AccessoryType.cs" />
-    <Compile Include="Migrations\201805261059478_UpdateTables.cs" />
-    <Compile Include="Migrations\201805261059478_UpdateTables.Designer.cs">
-      <DependentUpon>201805261059478_UpdateTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261139228_AccessoryType.cs" />
-    <Compile Include="Migrations\201805261139228_AccessoryType.Designer.cs">
-      <DependentUpon>201805261139228_AccessoryType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261240438_AccessoryTypeChange.cs" />
-    <Compile Include="Migrations\201805261240438_AccessoryTypeChange.Designer.cs">
-      <DependentUpon>201805261240438_AccessoryTypeChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261259573_ForeignKeys.cs" />
-    <Compile Include="Migrations\201805261259573_ForeignKeys.Designer.cs">
-      <DependentUpon>201805261259573_ForeignKeys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261302282_CHangeAccessoryType.cs" />
-    <Compile Include="Migrations\201805261302282_CHangeAccessoryType.Designer.cs">
-      <DependentUpon>201805261302282_CHangeAccessoryType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261310343_CHangeBike.cs" />
-    <Compile Include="Migrations\201805261310343_CHangeBike.Designer.cs">
-      <DependentUpon>201805261310343_CHangeBike.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261326080_CHangeBikeAgain.cs" />
-    <Compile Include="Migrations\201805261326080_CHangeBikeAgain.Designer.cs">
-      <DependentUpon>201805261326080_CHangeBikeAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261339198_CHangeBike_Again_1.cs" />
-    <Compile Include="Migrations\201805261339198_CHangeBike_Again_1.Designer.cs">
-      <DependentUpon>201805261339198_CHangeBike_Again_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261344172_CHangeBike_Again_2.cs" />
-    <Compile Include="Migrations\201805261344172_CHangeBike_Again_2.Designer.cs">
-      <DependentUpon>201805261344172_CHangeBike_Again_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Controllers\BikeController.cs" />
     <Compile Include="Data\BikeShopContext.cs" />
     <Compile Include="Data\Model\Accessory.cs" />
     <Compile Include="Data\Model\Battery.cs" />
@@ -235,7 +198,7 @@
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Presentation\Model\Accessory.cs" />
+    <Compile Include="Presentation\Controllers\BikeController.cs" />
     <Compile Include="Presentation\Model\Battery.cs" />
     <Compile Include="Presentation\Model\Bike.cs" />
     <Compile Include="Presentation\Model\BikeAccessoryMap.cs" />
@@ -268,9 +231,9 @@
     <Content Include="src\Home\Home.js" />
     <Content Include="src\images\logo.png" />
     <Content Include="src\Index.jsx" />
+    <Content Include="src\js\components\App.jsx" />
     <Content Include="src\js\components\BikeDetails.jsx" />
     <Content Include="src\js\components\Bikes.jsx" />
-    <Content Include="src\js\components\App.jsx" />
     <Content Include="src\js\components\Header.jsx" />
     <Content Include="src\Routes.jsx" />
     <Content Include="src\stores\DemoStore.jsx" />
@@ -288,33 +251,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805161610179_AddDataENtities.resx">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261059478_UpdateTables.resx">
-      <DependentUpon>201805261059478_UpdateTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261139228_AccessoryType.resx">
-      <DependentUpon>201805261139228_AccessoryType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261240438_AccessoryTypeChange.resx">
-      <DependentUpon>201805261240438_AccessoryTypeChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261259573_ForeignKeys.resx">
-      <DependentUpon>201805261259573_ForeignKeys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261302282_CHangeAccessoryType.resx">
-      <DependentUpon>201805261302282_CHangeAccessoryType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261310343_CHangeBike.resx">
-      <DependentUpon>201805261310343_CHangeBike.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261326080_CHangeBikeAgain.resx">
-      <DependentUpon>201805261326080_CHangeBikeAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261339198_CHangeBike_Again_1.resx">
-      <DependentUpon>201805261339198_CHangeBike_Again_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261344172_CHangeBike_Again_2.resx">
-      <DependentUpon>201805261344172_CHangeBike_Again_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

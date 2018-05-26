@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import loading from './loading.svg';
-
 class Callback extends Component {
   render() {
     const style = {
@@ -17,8 +15,8 @@ class Callback extends Component {
     }
 
     return (
-      <div style={style}>
-        <img src={loading} alt="loading"/>
+        <div style={style}>
+            Style!
       </div>
     );
   }

@@ -88,4 +88,4 @@ C:\Users\rebeka.veres\Source\Repos\reactapp\bin\Microsoft.AI.Web.xml
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\BikeSHop.dll
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\BikeSHop.pdb
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.DatabaseChanges.resources
-C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.DatabaseChanges1.resources
+C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.csprojResolveAssemblyReference.cache

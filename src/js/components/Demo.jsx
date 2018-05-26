@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 
 var DemoActionCreator = require('../../actions/DemoActionCreator.jsx');
 var DemoStore = require('../../stores/DemoStore.jsx');
-import Topic from './Topic.jsx';
 
 
 export default class Demo extends React.Component{

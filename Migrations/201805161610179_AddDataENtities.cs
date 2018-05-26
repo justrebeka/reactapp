@@ -39,7 +39,38 @@ namespace ReactApp.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-           CreateTable(
+            CreateTable(
+                "dbo.Bikes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Model = c.String(),
+                        Frame = c.String(),
+                        Fork = c.String(),
+                        Handlebar = c.String(),
+                        Rims = c.String(),
+                        Saddle = c.String(),
+                        Pedals = c.String(),
+                        FrontShifter = c.String(),
+                        RearShifter = c.String(),
+                        ShiftLevers = c.String(),
+                        Breaks = c.String(),
+                        BreakLevers = c.String(),
+                        Chain = c.String(),
+                        FrameSuspension = c.String(),
+                        ForkSuspension = c.String(),
+                        Engine = c.String(),
+                        Battery = c.String(),
+                        Computer = c.String(),
+                        Weight = c.Int(nullable: false),
+                        MaxLoad = c.Int(nullable: false),
+                        Price = c.Int(nullable: false),
+                        FrameSeries = c.String(),
+                        RiderHeight = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Engines",
                 c => new
                     {

@@ -189,10 +189,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805100844257_Bike.cs" />
-    <Compile Include="Migrations\201805100844257_Bike.Designer.cs">
-      <DependentUpon>201805100844257_Bike.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201805161610179_AddDataENtities.cs" />
     <Compile Include="Migrations\201805161610179_AddDataENtities.Designer.cs">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
@@ -250,9 +246,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805100844257_Bike.resx">
-      <DependentUpon>201805100844257_Bike.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805161610179_AddDataENtities.resx">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
     </EmbeddedResource>

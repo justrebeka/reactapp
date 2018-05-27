@@ -1,4 +1,3 @@
-C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.Bike.resources
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.AddDataENtities.resources
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.csproj.GenerateResource.Cache
 C:\Users\rebeka.veres\Source\Repos\reactapp\bin\ApplicationInsights.config

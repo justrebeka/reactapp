@@ -5,16 +5,16 @@ var ActionTypes = require('../constants/ActionTypes.jsx');
 
 var DemoActionCreator = {
     
-    getTopics: function () {
+    getBikes: function () {
         Dispatcher.handleViewAction({
-            actionType: ActionTypes.GET_TOPICS,
+            actionType: ActionTypes.GET_BIKES,
         });
 
-        DemoApi.getTopics();
+        DemoApi.getBikes();
     },
-    receiveTopicsResponse: function (response) {
+    receiveBikesResponse: function (response) {
         Dispatcher.handleServerAction({
-            actionType: ActionTypes.GET_Topics_RESPONSE,
+            actionType: ActionTypes.GET_BIKES_RESPONSE,
             response: response
         });
     }

@@ -4,14 +4,14 @@ var DemoServerActionCreator = require('../actions/DemoServerActionCreator.jsx');
 
 module.exports = {
 
-    getTopics: function () {
+    getBikes: function () {
        
-        request.get('http://localhost:3039/api/Values')
+        request.get('http://localhost:3039/api/Bike')
             .set('Accept', 'application/json')
             .end(function (err, response) {
                 if (err) return console.error(err);
 
-                DemoServerActionCreator.receiveTopicsResponse(response.body);
+                DemoServerActionCreator.receiveBikesResponse(response.body);
             });
     }
 };

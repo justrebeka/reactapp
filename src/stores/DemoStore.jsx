@@ -7,7 +7,7 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-    topics: []
+    bikes: []
 };
 
 var DemoStore = ObjectAssign({}, EventEmitter.prototype, {
@@ -20,8 +20,8 @@ var DemoStore = ObjectAssign({}, EventEmitter.prototype, {
         this.removeListener(CHANGE_EVENT, cb);
     },
 
-    getTopics: function () {
-        return _store.topics;
+    getBikes: function () {
+        return _store.bikes;
     }
 
 });
@@ -33,9 +33,9 @@ AppDispatcher.register(function (payload) {
 
     switch (action.actionType) {
 
-            case AppConstants.GET_TOPICS_RESPONSE:
+            case AppConstants.GET_BIKES_RESPONSE:
 
-            _store.topics = action.response;
+            _store.bikes = action.response;
             DemoStore.emit(CHANGE_EVENT);
             break;
 

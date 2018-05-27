@@ -205,10 +205,9 @@
     <Compile Include="Presentation\Controllers\BikeController.cs" />
     <Compile Include="Presentation\Model\Battery.cs" />
     <Compile Include="Presentation\Model\Bike.cs" />
-    <Compile Include="Presentation\Model\BikeAccessoryMap.cs" />
+    <Compile Include="Presentation\Model\Accessory.cs" />
     <Compile Include="Presentation\Model\Engine.cs" />
     <Compile Include="Presentation\Model\Order.cs" />
-    <Compile Include="Presentation\Model\PurchasedBikes.cs" />
     <Compile Include="Presentation\Model\TestRide.cs" />
     <Compile Include="Presentation\Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -232,6 +231,7 @@
     </Content>
     <Content Include="src\constants\ActionTypes.jsx" />
     <Content Include="src\dispatcher\AppDispatcher.jsx" />
+    <Content Include="src\history.js" />
     <Content Include="src\Home\Home.js" />
     <Content Include="src\images\logo.png" />
     <Content Include="src\Index.jsx" />

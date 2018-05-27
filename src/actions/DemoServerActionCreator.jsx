@@ -4,9 +4,9 @@ var ActionTypes = require('../constants/ActionTypes.jsx');
 
 var DemoServerActionCreator = {
 
-    receiveTopicsResponse: function (response) {
+    receiveBikesResponse: function (response) {
         Dispatcher.handleServerAction({
-            actionType: ActionTypes.GET_TOPICS_RESPONSE,
+            actionType: ActionTypes.GET_BIKES_RESPONSE,
             response: response
         });
     }

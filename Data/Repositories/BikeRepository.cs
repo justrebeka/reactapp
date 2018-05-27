@@ -26,6 +26,23 @@ namespace ReactApp.Data
             return bikes.Select(b => Data.Model.Bike.ToBusiness(b)).ToList();
         }
 
+
+        public Business.Model.Bike GetBike(int id)
+        {
+            var bike = new Data.Model.Bike();
+            using (var db = new BikeShopContext())
+            {
+                // Display all Bikes from the database 
+                bike = (from b in db.Bikes
+                         where b.Id == id
+                         orderby b.Model
+                         select b).FirstOrDefault();
+
+            }
+
+            return Data.Model.Bike.ToBusiness(bike);
+        }
+
         public void AddBike(Business.Model.Bike bike)
         {
             using (var db = new BikeShopContext())

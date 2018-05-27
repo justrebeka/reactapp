@@ -1,6 +1,6 @@
 ﻿"use strict";
 
 module.exports = {
-    GET_TOPICS: 'GET_TOPICS',
-    GET_TOPICS_RESPONSE: 'GET_TOPICS_RESPONSE'
+    GET_BIKES: 'GET_BIKES',
+    GET_BIKES_RESPONSE: 'GET_BIKES_RESPONSE'
 };

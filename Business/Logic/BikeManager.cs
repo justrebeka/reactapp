@@ -16,6 +16,10 @@ namespace ReactApp.Business.Logic
             return bikeRepository.GetBikes();
         }
 
+        public Model.Bike GetBike(int id)
+        {
+           return bikeRepository.GetBike(id);
+        }
 
         public void AddBike(Bike bike)
         {

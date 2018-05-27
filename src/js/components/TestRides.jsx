@@ -11,13 +11,13 @@ export default class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bikes: DemoStore.getBikes()
+            testRides: DemoStore.getTestRides(props.userId)
         };
         this._onchange = this._onchange.bind(this);
     }
 
     _onchange() {
-        this.setState({ bikes: DemoStore.getBikes() });
+        this.setState({ testRides: DemoStore.getTestRides(this.props.userId) });
     }
 
     componentWillUnmount() {
@@ -26,7 +26,7 @@ export default class Demo extends React.Component {
 
     componentDidMount() {
         DemoStore.addChangeListener(this._onchange);
-        DemoActionCreator.getBikes();
+        DemoActionCreator.getTestRides(this.props.userId);
 
     }
 
@@ -50,18 +50,10 @@ export default class Demo extends React.Component {
         return (
             <div className="jumbotron">
                 <Griddle
-                    data={this.state.bikes}
+                    data={this.state.testRides}
                     plugins={[plugins.LocalPlugin]}
                     styleConfig={styleConfig}>
-                    <RowDefinition>
-                        <ColumnDefinition id="Model" title="Model" width={150}/>
-                        <ColumnDefinition id="Frame" title="Frame" width={150} />
-                        <ColumnDefinition id="FrameSeries" title="Frame Series" width={150} />
-                        <ColumnDefinition id="Fork" title="Fork" width={150}/>
-                        <ColumnDefinition id="Computer" title="Computer" width={150} />
-                        <ColumnDefinition id="Weight" title="Weight" width={150} />
-                        <ColumnDefinition id="Price" title="Price" width={150} />
-                    </RowDefinition>
+                  
                 </Griddle>
             </div>);
 

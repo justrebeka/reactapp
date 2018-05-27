@@ -6,6 +6,10 @@ var React = require("react");
 import App from './js/components/App.jsx';
 import Home from './js/components/Home.jsx';
 import Bikes from './js/components/Bikes.jsx';
+import Contact from './js/components/Contact.jsx';
+import TestRides from './js/components/TestRides.jsx';
+import Orders from './js/components/Orders.jsx';
+
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 
@@ -29,6 +33,9 @@ var Routes = (
         <Route path="/" render={(props) => <App auth={auth} {...props} />} />
         <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
         <Route path="/bikes" component={Bikes} />
+        <Route path="/testrides" component={TestRides} />
+        <Route path="/orders" component={Orders} />
+        <Route path="/contact" component={Contact} />
         <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} />

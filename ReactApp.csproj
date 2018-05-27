@@ -165,6 +165,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Logic\BikeManager.cs" />
+    <Compile Include="Business\Logic\OrderManager.cs" />
+    <Compile Include="Business\Logic\TestRideManager.cs" />
     <Compile Include="Business\Model\AccessoryType.cs" />
     <Compile Include="Business\Model\Accessory.cs" />
     <Compile Include="Business\Model\Battery.cs" />
@@ -186,6 +188,8 @@
     <Compile Include="Data\Model\TestRide.cs" />
     <Compile Include="Data\Model\User.cs" />
     <Compile Include="Data\Repositories\BikeRepository.cs" />
+    <Compile Include="Data\Repositories\OrderRepository.cs" />
+    <Compile Include="Data\Repositories\TestRideRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,7 +201,13 @@
     <Compile Include="Migrations\201805262152112_DatabaseChanges.Designer.cs">
       <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805271149564_ChangeOrder.cs" />
+    <Compile Include="Migrations\201805271149564_ChangeOrder.Designer.cs">
+      <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Presentation\Controllers\OrderController.cs" />
+    <Compile Include="Presentation\Controllers\TestRideController.cs" />
     <Compile Include="Presentation\Controllers\BikeController.cs" />
     <Compile Include="Presentation\Model\Battery.cs" />
     <Compile Include="Presentation\Model\Bike.cs" />
@@ -233,8 +243,11 @@
     <Content Include="src\Index.jsx" />
     <Content Include="src\js\components\App.jsx" />
     <Content Include="src\js\components\BikeDetails.jsx" />
+    <Content Include="src\js\components\Orders.jsx" />
+    <Content Include="src\js\components\TestRides.jsx" />
     <Content Include="src\js\components\Bikes.jsx" />
     <Content Include="src\js\components\Header.jsx" />
+    <Content Include="src\js\components\Contact.jsx" />
     <Content Include="src\Routes.jsx" />
     <Content Include="src\stores\DemoStore.jsx" />
     <Content Include="Web.config" />
@@ -251,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805262152112_DatabaseChanges.resx">
       <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271149564_ChangeOrder.resx">
+      <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

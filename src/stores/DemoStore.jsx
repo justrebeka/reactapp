@@ -7,7 +7,9 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-    bikes: []
+    bikes: [],
+    testRides: [],
+    orders:[]
 };
 
 var DemoStore = ObjectAssign({}, EventEmitter.prototype, {
@@ -22,6 +24,12 @@ var DemoStore = ObjectAssign({}, EventEmitter.prototype, {
 
     getBikes: function () {
         return _store.bikes;
+    },
+    getTestRides: function () {
+        return _store.testRides;
+    },
+    getOrders: function () {
+        return _store.orders;
     }
 
 });
@@ -38,6 +46,18 @@ AppDispatcher.register(function (payload) {
             _store.bikes = action.response;
             DemoStore.emit(CHANGE_EVENT);
             break;
+
+            case AppConstants.GET_TESTRIDES_RESPONSE:
+
+                _store.testRides = action.response;
+                DemoStore.emit(CHANGE_EVENT);
+                break;
+
+            case AppConstants.GET_ORDERS_RESPONSE:
+
+                _store.orders = action.response;
+                DemoStore.emit(CHANGE_EVENT);
+                break;
 
        default:
             return true;

@@ -11,9 +11,9 @@ namespace ReactApp.Business.Logic
     {
         public OrderRepository orderRepository = new OrderRepository();
 
-        public List<Order> GetOrders()
+        public List<Order> GetOrdersForUser(int userId)
         {
-            return orderRepository.GetOrders();
+            return orderRepository.GetOrdersForUser(userId);
         }
 
 

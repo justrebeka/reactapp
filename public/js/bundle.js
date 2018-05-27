@@ -86561,6 +86561,18 @@ var _Bikes = require("./js/components/Bikes.jsx");
 
 var _Bikes2 = _interopRequireDefault(_Bikes);
 
+var _Contact = require("./js/components/Contact.jsx");
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
+var _TestRides = require("./js/components/TestRides.jsx");
+
+var _TestRides2 = _interopRequireDefault(_TestRides);
+
+var _Orders = require("./js/components/Orders.jsx");
+
+var _Orders2 = _interopRequireDefault(_Orders);
+
 var _Callback = require("./Callback/Callback");
 
 var _Callback2 = _interopRequireDefault(_Callback);
@@ -86595,6 +86607,9 @@ var Routes = React.createElement(
             return React.createElement(_Home2.default, _extends({ auth: auth }, props));
         } }),
     React.createElement(_reactRouterDom.Route, { path: "/bikes", component: _Bikes2.default }),
+    React.createElement(_reactRouterDom.Route, { path: "/testrides", component: _TestRides2.default }),
+    React.createElement(_reactRouterDom.Route, { path: "/orders", component: _Orders2.default }),
+    React.createElement(_reactRouterDom.Route, { path: "/contact", component: _Contact2.default }),
     React.createElement(_reactRouterDom.Route, { path: "/callback", render: function render(props) {
             handleAuthentication(props);
             return React.createElement(_Callback2.default, props);
@@ -86603,14 +86618,18 @@ var Routes = React.createElement(
 
 module.exports = Routes;
 
-},{"./Auth/Auth":912,"./Callback/Callback":914,"./js/components/App.jsx":923,"./js/components/Bikes.jsx":924,"./js/components/Home.jsx":926,"react":864,"react-router-dom":825}],917:[function(require,module,exports){
+},{"./Auth/Auth":912,"./Callback/Callback":914,"./js/components/App.jsx":923,"./js/components/Bikes.jsx":924,"./js/components/Contact.jsx":925,"./js/components/Home.jsx":927,"./js/components/Orders.jsx":928,"./js/components/TestRides.jsx":929,"react":864,"react-router-dom":825}],917:[function(require,module,exports){
 'use strict';
+
+var _DemoActionCreator;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var Dispatcher = require('../dispatcher/AppDispatcher.jsx');
 var DemoApi = require('../api/DemoApi.jsx');
 var ActionTypes = require('../constants/ActionTypes.jsx');
 
-var DemoActionCreator = {
+var DemoActionCreator = (_DemoActionCreator = {
 
     getBikes: function getBikes() {
         Dispatcher.handleViewAction({
@@ -86624,9 +86643,31 @@ var DemoActionCreator = {
             actionType: ActionTypes.GET_BIKES_RESPONSE,
             response: response
         });
-    }
+    },
+    getTestRides: function getTestRides(userId) {
+        Dispatcher.handleViewAction({
+            actionType: ActionTypes.GET_TESTRIDES
+        });
 
-};
+        DemoApi.getTestRides(userId);
+    }
+}, _defineProperty(_DemoActionCreator, 'receiveBikesResponse', function receiveBikesResponse(response) {
+    Dispatcher.handleServerAction({
+        actionType: ActionTypes.GET_TESTRIDES_RESPONSE,
+        response: response
+    });
+}), _defineProperty(_DemoActionCreator, 'getOrders', function getOrders(userId) {
+    Dispatcher.handleViewAction({
+        actionType: ActionTypes.GET_ORDERS
+    });
+
+    DemoApi.getOrders(userId);
+}), _defineProperty(_DemoActionCreator, 'receiveOrdersResponse', function receiveOrdersResponse(response) {
+    Dispatcher.handleServerAction({
+        actionType: ActionTypes.GET_ORDERS_RESPONSE,
+        response: response
+    });
+}), _DemoActionCreator);
 
 module.exports = DemoActionCreator;
 
@@ -86641,6 +86682,18 @@ var DemoServerActionCreator = {
     receiveBikesResponse: function receiveBikesResponse(response) {
         Dispatcher.handleServerAction({
             actionType: ActionTypes.GET_BIKES_RESPONSE,
+            response: response
+        });
+    },
+    receiveTestRidesResponse: function receiveTestRidesResponse(response) {
+        Dispatcher.handleServerAction({
+            actionType: ActionTypes.GET_TESTRIDES_RESPONSE,
+            response: response
+        });
+    },
+    receiveOrdersResponse: function receiveOrdersResponse(response) {
+        Dispatcher.handleServerAction({
+            actionType: ActionTypes.GET_ORDERS_RESPONSE,
             response: response
         });
     }
@@ -86663,6 +86716,22 @@ module.exports = {
             if (err) return console.error(err);
 
             DemoServerActionCreator.receiveBikesResponse(response.body);
+        });
+    },
+    getTestRides: function getTestRides(userId) {
+
+        request.get('http://localhost:3039/api/TestRide/' + userId).set('Accept', 'application/json').end(function (err, response) {
+            if (err) return console.error(err);
+
+            DemoServerActionCreator.receiveTestRidesResponse(response.body);
+        });
+    },
+    getOrders: function getOrders(userId) {
+
+        request.get('http://localhost:3039/api/Order/' + userId).set('Accept', 'application/json').end(function (err, response) {
+            if (err) return console.error(err);
+
+            DemoServerActionCreator.receiveOrdersResponse(response.body);
         });
     }
 };
@@ -86803,7 +86872,7 @@ var App = function (_React$Component) {
 
 exports.default = App;
 
-},{"./Header.jsx":925,"react":864,"react-bootstrap":622}],924:[function(require,module,exports){
+},{"./Header.jsx":926,"react":864,"react-bootstrap":622}],924:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -86907,6 +86976,7 @@ var Demo = function (_React$Component) {
                         null,
                         _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Model', title: 'Model', width: 150 }),
                         _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Frame', title: 'Frame', width: 150 }),
+                        _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'FrameSeries', title: 'Frame Series', width: 150 }),
                         _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Fork', title: 'Fork', width: 150 }),
                         _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Computer', title: 'Computer', width: 150 }),
                         _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Weight', title: 'Weight', width: 150 }),
@@ -86922,7 +86992,57 @@ var Demo = function (_React$Component) {
 
 exports.default = Demo;
 
-},{"../../actions/DemoActionCreator.jsx":917,"../../stores/DemoStore.jsx":927,"griddle-react":255,"react":864,"react-dom":633}],925:[function(require,module,exports){
+},{"../../actions/DemoActionCreator.jsx":917,"../../stores/DemoStore.jsx":930,"griddle-react":255,"react":864,"react-dom":633}],925:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_React$Component) {
+    _inherits(Home, _React$Component);
+
+    function Home() {
+        _classCallCheck(this, Home);
+
+        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+    }
+
+    _createClass(Home, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "jumbotron" },
+                _react2.default.createElement(
+                    "h3",
+                    null,
+                    " Please contact us via blablabla@gmail.com or +40 777 777 777."
+                )
+            );
+        }
+    }]);
+
+    return Home;
+}(_react2.default.Component);
+
+exports.default = Home;
+
+},{"react":864}],926:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -86978,6 +87098,33 @@ var Header = function (_React$Component) {
                             { href: "/#bikes" },
                             "Bikes"
                         )
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        { role: "presentation" },
+                        _react2.default.createElement(
+                            "a",
+                            { href: "/#testrides" },
+                            "My Test Rides"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        { role: "presentation" },
+                        _react2.default.createElement(
+                            "a",
+                            { href: "/#orders" },
+                            "My Orders"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        { role: "presentation" },
+                        _react2.default.createElement(
+                            "a",
+                            { href: "/#contact" },
+                            "Contact"
+                        )
                     )
                 )
             );
@@ -86989,7 +87136,7 @@ var Header = function (_React$Component) {
 
 exports.default = Header;
 
-},{"react":864}],926:[function(require,module,exports){
+},{"react":864}],927:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87039,7 +87186,219 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"react":864}],927:[function(require,module,exports){
+},{"react":864}],928:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _griddleReact = require('griddle-react');
+
+var _griddleReact2 = _interopRequireDefault(_griddleReact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DemoActionCreator = require('../../actions/DemoActionCreator.jsx');
+var DemoStore = require('../../stores/DemoStore.jsx');
+
+var Demo = function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
+
+        _this.state = {
+            orders: DemoStore.getOrders(_this.props.userId)
+        };
+        _this._onchange = _this._onchange.bind(_this);
+        return _this;
+    }
+
+    _createClass(Demo, [{
+        key: '_onchange',
+        value: function _onchange() {
+            this.setState({ bikes: DemoStore.getOrders() });
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            DemoStore.removeChangeListener(this._onchange);
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            DemoStore.addChangeListener(this._onchange);
+            DemoActionCreator.getOrders(this.props.userId);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var styleConfig = {
+                icons: {
+                    TableHeadingCell: {
+                        sortDescendingIcon: _react2.default.createElement(
+                            'small',
+                            null,
+                            '(desc)'
+                        ),
+                        sortAscendingIcon: _react2.default.createElement(
+                            'small',
+                            null,
+                            '(asc)'
+                        )
+                    }
+                },
+                classNames: {
+                    Row: 'row-class'
+                },
+                styles: {
+                    Filter: { fontSize: 18 },
+                    Table: { border: "0.5px solid #555 " }
+                }
+            };
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'jumbotron' },
+                _react2.default.createElement(_griddleReact2.default, {
+                    data: this.state.orders,
+                    plugins: [_griddleReact.plugins.LocalPlugin],
+                    styleConfig: styleConfig })
+            );
+        }
+    }]);
+
+    return Demo;
+}(_react2.default.Component);
+
+exports.default = Demo;
+
+},{"../../actions/DemoActionCreator.jsx":917,"../../stores/DemoStore.jsx":930,"griddle-react":255,"react":864,"react-dom":633}],929:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _griddleReact = require('griddle-react');
+
+var _griddleReact2 = _interopRequireDefault(_griddleReact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DemoActionCreator = require('../../actions/DemoActionCreator.jsx');
+var DemoStore = require('../../stores/DemoStore.jsx');
+
+var Demo = function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
+
+        _this.state = {
+            testRides: DemoStore.getTestRides(props.userId)
+        };
+        _this._onchange = _this._onchange.bind(_this);
+        return _this;
+    }
+
+    _createClass(Demo, [{
+        key: '_onchange',
+        value: function _onchange() {
+            this.setState({ testRides: DemoStore.getTestRides(this.props.userId) });
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            DemoStore.removeChangeListener(this._onchange);
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            DemoStore.addChangeListener(this._onchange);
+            DemoActionCreator.getTestRides(this.props.userId);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var styleConfig = {
+                icons: {
+                    TableHeadingCell: {
+                        sortDescendingIcon: _react2.default.createElement(
+                            'small',
+                            null,
+                            '(desc)'
+                        ),
+                        sortAscendingIcon: _react2.default.createElement(
+                            'small',
+                            null,
+                            '(asc)'
+                        )
+                    }
+                },
+                classNames: {
+                    Row: 'row-class'
+                },
+                styles: {
+                    Filter: { fontSize: 18 },
+                    Table: { border: "0.5px solid #555 " }
+                }
+            };
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'jumbotron' },
+                _react2.default.createElement(_griddleReact2.default, {
+                    data: this.state.testRides,
+                    plugins: [_griddleReact.plugins.LocalPlugin],
+                    styleConfig: styleConfig })
+            );
+        }
+    }]);
+
+    return Demo;
+}(_react2.default.Component);
+
+exports.default = Demo;
+
+},{"../../actions/DemoActionCreator.jsx":917,"../../stores/DemoStore.jsx":930,"griddle-react":255,"react":864,"react-dom":633}],930:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher.jsx');
@@ -87050,7 +87409,9 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-    bikes: []
+    bikes: [],
+    testRides: [],
+    orders: []
 };
 
 var DemoStore = ObjectAssign({}, EventEmitter.prototype, {
@@ -87065,6 +87426,12 @@ var DemoStore = ObjectAssign({}, EventEmitter.prototype, {
 
     getBikes: function getBikes() {
         return _store.bikes;
+    },
+    getTestRides: function getTestRides() {
+        return _store.testRides;
+    },
+    getOrders: function getOrders() {
+        return _store.orders;
     }
 
 });
@@ -87078,6 +87445,18 @@ AppDispatcher.register(function (payload) {
         case AppConstants.GET_BIKES_RESPONSE:
 
             _store.bikes = action.response;
+            DemoStore.emit(CHANGE_EVENT);
+            break;
+
+        case AppConstants.GET_TESTRIDES_RESPONSE:
+
+            _store.testRides = action.response;
+            DemoStore.emit(CHANGE_EVENT);
+            break;
+
+        case AppConstants.GET_ORDERS_RESPONSE:
+
+            _store.orders = action.response;
             DemoStore.emit(CHANGE_EVENT);
             break;
 

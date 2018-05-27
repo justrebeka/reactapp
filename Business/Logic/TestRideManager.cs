@@ -11,9 +11,9 @@ namespace ReactApp.Business.Logic
     {
         public TestRideRepository testRideRepository = new TestRideRepository();
 
-        public List<TestRide> GetTestRides()
+        public List<TestRide> GetTestRidesForUser(int userId)
         {
-            return testRideRepository.GetTestRides();
+            return testRideRepository.GetTestRidesForUser(userId);
         }
 
 

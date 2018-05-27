@@ -6,17 +6,17 @@ namespace ReactApp.Data
 {
     public class TestRideRepository
     {
-        public List<Business.Model.TestRide> GetTestRide()
+        public List<Business.Model.TestRide> GetTestRidesForUser(int userId)
         {
             var testrides = new List<Data.Model.TestRide>();
             using (var db = new BikeShopContext())
             {
                 // Display all TestRides from the database 
                 testrides = (from b in db.TestRides
+                             where b.UserId == userId
                              orderby b.Id
                          select b).ToList();
 
-                Console.WriteLine("All testrides in the database:");
                 foreach (var item in testrides)
                 {
                     Console.WriteLine(item.Id);

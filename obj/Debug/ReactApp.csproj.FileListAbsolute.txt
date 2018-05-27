@@ -88,3 +88,4 @@ C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\BikeSHop.dll
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\BikeSHop.pdb
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.DatabaseChanges.resources
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.csprojResolveAssemblyReference.cache
+C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.ChangeOrder.resources

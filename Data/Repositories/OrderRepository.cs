@@ -6,21 +6,18 @@ namespace ReactApp.Data
 {
     public class OrderRepository
     {
-        public List<Business.Model.Order> GetOrders()
+        public List<Business.Model.Order> GetOrdersForUser(int userId)
         {
             var orders = new List<Data.Model.Order>();
             using (var db = new BikeShopContext())
             {
                 // Display all Orders from the database 
                 orders = (from b in db.Orders
-                         orderby b.OrderId
+                          where b.UserId == userId
+                         orderby b.Id
                          select b).ToList();
 
-                Console.WriteLine("All orders in the database:");
-                foreach (var item in orders)
-                {
-                    Console.WriteLine(item.OrderId);
-                }
+               
             }
 
             return orders.Select(b => Data.Model.Order.ToBusiness(b)).ToList();
@@ -31,7 +28,7 @@ namespace ReactApp.Data
             using (var db = new BikeShopContext())
             {
                 // Create and save a new Order               
-                db.Orders.Add(new Data.Model.Order { OrderId = order.OrderId });
+                db.Orders.Add(new Data.Model.Order { Id = order.Id });
                 db.SaveChanges();
             }
         }

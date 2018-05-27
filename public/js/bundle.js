@@ -86869,12 +86869,50 @@ var Demo = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var styleConfig = {
+                icons: {
+                    TableHeadingCell: {
+                        sortDescendingIcon: _react2.default.createElement(
+                            'small',
+                            null,
+                            '(desc)'
+                        ),
+                        sortAscendingIcon: _react2.default.createElement(
+                            'small',
+                            null,
+                            '(asc)'
+                        )
+                    }
+                },
+                classNames: {
+                    Row: 'row-class'
+                },
+                styles: {
+                    Filter: { fontSize: 18 },
+                    Table: { border: "0.5px solid #555 " }
+                }
+            };
+
             return _react2.default.createElement(
                 'div',
                 { className: 'jumbotron' },
-                _react2.default.createElement(_griddleReact2.default, {
-                    data: this.state.bikes,
-                    plugins: [_griddleReact.plugins.LocalPlugin] })
+                _react2.default.createElement(
+                    _griddleReact2.default,
+                    {
+                        data: this.state.bikes,
+                        plugins: [_griddleReact.plugins.LocalPlugin],
+                        styleConfig: styleConfig },
+                    _react2.default.createElement(
+                        _griddleReact.RowDefinition,
+                        null,
+                        _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Model', title: 'Model', width: 150 }),
+                        _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Frame', title: 'Frame', width: 150 }),
+                        _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Fork', title: 'Fork', width: 150 }),
+                        _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Computer', title: 'Computer', width: 150 }),
+                        _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Weight', title: 'Weight', width: 150 }),
+                        _react2.default.createElement(_griddleReact.ColumnDefinition, { id: 'Price', title: 'Price', width: 150 })
+                    )
+                )
             );
         }
     }]);

@@ -5,7 +5,7 @@ import React from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import Header from './Header.jsx';
 
-export default class App extends React.Component{
+export default class App extends React.Component {
 
     login() {
         this.props.auth.login();
@@ -20,35 +20,42 @@ export default class App extends React.Component{
 
         return (
             <div>
-                <h1>  </h1>
-                <br />
-                {
-                    !isAuthenticated() && (
-                        <Button
-                            id="qsLoginBtn"
-                            bsStyle="primary"
-                            className="btn-margin"
-                            onClick={this.login.bind(this)}
-                        >
-                            Log In
+
+
+                <div className="row">
+                    <div className="col-md-2">
+                        <h1> Bike Shop </h1>
+                    </div>
+                    <div className="col-md-2 col-md-offset-8 align-center">
+                        {
+                            !isAuthenticated() && (
+                                <Button
+                                    id="qsLoginBtn"
+                                    bsStyle="primary"
+                                    className="btn-margin"
+                                    onClick={this.login.bind(this)}
+                                >
+                                    Log In
+                            </Button>
+                            )
+                        }
+                        {
+                            isAuthenticated() && (
+                                <Button
+                                    id="qsLogoutBtn"
+                                    bsStyle="primary"
+                                    className="btn-margin"
+                                    onClick={this.logout.bind(this)}
+                                >
+                                    Log Out
                   </Button>
-                    )
-                }
-                {
-                    isAuthenticated() && (
-                        <Button
-                            id="qsLogoutBtn"
-                            bsStyle="primary"
-                            className="btn-margin"
-                            onClick={this.logout.bind(this)}
-                        >
-                            Log Out
-                  </Button>
-                    )
-                }
+                            )
+                        }
+                    </div>
+                </div>
                 <Header />
-                
-            </div>);
+
+                </div>
 
     }
 }

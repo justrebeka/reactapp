@@ -193,19 +193,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805161610179_AddDataENtities.cs" />
-    <Compile Include="Migrations\201805161610179_AddDataENtities.Designer.cs">
+    <Compile Include="obj\Migrations\201805161610179_AddDataENtities.cs" />
+    <Compile Include="obj\Migrations\201805161610179_AddDataENtities.Designer.cs">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805262152112_DatabaseChanges.cs" />
-    <Compile Include="Migrations\201805262152112_DatabaseChanges.Designer.cs">
+    <Compile Include="obj\Migrations\201805262152112_DatabaseChanges.cs" />
+    <Compile Include="obj\Migrations\201805262152112_DatabaseChanges.Designer.cs">
       <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805271149564_ChangeOrder.cs" />
-    <Compile Include="Migrations\201805271149564_ChangeOrder.Designer.cs">
+    <Compile Include="obj\Migrations\201805271149564_ChangeOrder.cs" />
+    <Compile Include="obj\Migrations\201805271149564_ChangeOrder.Designer.cs">
       <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="obj\Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\OrderController.cs" />
     <Compile Include="Presentation\Controllers\TestRideController.cs" />
     <Compile Include="Presentation\Controllers\BikeController.cs" />
@@ -226,6 +226,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include=".babelrc.json" />
+    <Content Include="public\css\app.css" />
     <Content Include="src\actions\DemoActionCreator.jsx" />
     <Content Include="src\actions\DemoServerActionCreator.jsx" />
     <Content Include="src\api\DemoApi.jsx" />
@@ -259,13 +260,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805161610179_AddDataENtities.resx">
+    <EmbeddedResource Include="obj\Migrations\201805161610179_AddDataENtities.resx">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805262152112_DatabaseChanges.resx">
+    <EmbeddedResource Include="obj\Migrations\201805262152112_DatabaseChanges.resx">
       <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805271149564_ChangeOrder.resx">
+    <EmbeddedResource Include="obj\Migrations\201805271149564_ChangeOrder.resx">
       <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -278,7 +279,9 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -20,29 +20,27 @@ var config = {
         js: './src/**/*.js*',
         indexJs: './src/Index.jsx',
         dist: './public',
-        css: ['../node_modules/bootstrap/public/css/bootstrap-theme.min.css',
+        css: [
+            '../node_modules/bootstrap/public/css/bootstrap-theme.min.css',
             '../node_modules/bootstrap/public/css/bootstrap.min.css']
     }
-    
-
 }
 
 gulp.task('conn', function () {
     conn.server({
-        root:['public'],
+        root: ['public'],
         port: config.port,
-        base:config.baseurl,
-        livereload:true
+        base: config.baseurl,
+        livereload: true
     });
 });
 
-gulp.task('open',['conn'], function () {
+gulp.task('open', ['conn'], function () {
     gulp.src('public/index.html').
         pipe(open({ uri: config.baseurl + ':' + config.port + "/#/home" }));
 });
 
-gulp.task('html', function ()
-{
+gulp.task('html', function () {
     gulp.src(config.paths.html)
         .pipe(gulp.dest(config.paths.dist))
         .pipe(conn.reload());
@@ -51,7 +49,7 @@ gulp.task('html', function ()
 
 gulp.task('images', function () {
     gulp.src(config.paths.images)
-        .pipe(gulp.dest(config.paths.dist+'/images'))
+        .pipe(gulp.dest(config.paths.dist + '/images'))
         .pipe(conn.reload());
 
     gulp.src('./favicon.ico')
@@ -66,13 +64,13 @@ gulp.task('css', function () {
 
 gulp.task('lint', function () {
     gulp.src(config.paths.js)
-        .pipe(lint({ config:'./eslintrc.json'}))
+        .pipe(lint({ config: './eslintrc.json' }))
         .pipe(lint.format())
 });
 
 gulp.task('js', function () {
     browserify(config.paths.indexJs)
-        .transform(babelify, {presets: ["es2015", "react"] })
+        .transform(babelify, { presets: ["es2015", "react"] })
         .bundle()
         .on('error', console.error.bind(console))
         .pipe(source('bundle.js'))
@@ -87,5 +85,5 @@ gulp.task('watch', function () {
     gulp.watch(config.paths.images, ['images']);
 });
 
-gulp.task('default', ['html', 'js','css','images','lint','open','watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);
 

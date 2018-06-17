@@ -7,12 +7,12 @@ export default class Header extends React.Component{
         return (
             <div>
                 
-                <ul className="nav nav-tabs">
-                    <li role="presentation"><a href="/#home"> Home</a></li>
-                    <li role="presentation"><a href="/#bikes">Bikes</a></li>
-                    <li role="presentation"><a href="/#testrides">My Test Rides</a></li>
-                    <li role="presentation"><a href="/#orders">My Orders</a></li>
-                    <li role="presentation"><a href="/#contact">Contact</a></li>
+                <ul id="meniu" className="nav nav-tabs">
+                    <li role="presentation"><a href="/#home" className="home"> Home</a></li>
+                    <li role="presentation"><a href="/#bikes" className="home">Bikes</a></li>
+                    <li role="presentation"><a href="/#testrides" className="home">My Test Rides</a></li>
+                    <li role="presentation"><a href="/#orders" className="home">My Orders</a></li>
+                    <li role="presentation"><a href="/#contact" className="home">Contact</a></li>
                 </ul>
 
             </div>);

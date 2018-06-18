@@ -193,19 +193,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="obj\Migrations\201805161610179_AddDataENtities.cs" />
-    <Compile Include="obj\Migrations\201805161610179_AddDataENtities.Designer.cs">
+    <Compile Include="Migrations\201805161610179_AddDataENtities.cs" />
+    <Compile Include="Migrations\201805161610179_AddDataENtities.Designer.cs">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Migrations\201805262152112_DatabaseChanges.cs" />
-    <Compile Include="obj\Migrations\201805262152112_DatabaseChanges.Designer.cs">
+    <Compile Include="Migrations\201805262152112_DatabaseChanges.cs" />
+    <Compile Include="Migrations\201805262152112_DatabaseChanges.Designer.cs">
       <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Migrations\201805271149564_ChangeOrder.cs" />
-    <Compile Include="obj\Migrations\201805271149564_ChangeOrder.Designer.cs">
+    <Compile Include="Migrations\201805271149564_ChangeOrder.cs" />
+    <Compile Include="Migrations\201805271149564_ChangeOrder.Designer.cs">
       <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\OrderController.cs" />
     <Compile Include="Presentation\Controllers\TestRideController.cs" />
     <Compile Include="Presentation\Controllers\BikeController.cs" />
@@ -260,13 +260,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="obj\Migrations\201805161610179_AddDataENtities.resx">
+    <EmbeddedResource Include="Migrations\201805161610179_AddDataENtities.resx">
       <DependentUpon>201805161610179_AddDataENtities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Migrations\201805262152112_DatabaseChanges.resx">
+    <EmbeddedResource Include="Migrations\201805262152112_DatabaseChanges.resx">
       <DependentUpon>201805262152112_DatabaseChanges.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Migrations\201805271149564_ChangeOrder.resx">
+    <EmbeddedResource Include="Migrations\201805271149564_ChangeOrder.resx">
       <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

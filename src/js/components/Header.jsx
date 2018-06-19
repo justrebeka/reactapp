@@ -2,17 +2,21 @@
 
 import React from 'react';
 
+import {
+    Link
+} from 'react-router-dom' 
+
 export default class Header extends React.Component{
     render() {
         return (
             <div>
                 
                 <ul id="meniu" className="nav nav-tabs">
-                    <li role="presentation"><a href="/#home" className="home"> Home</a></li>
-                    <li role="presentation"><a href="/#bikes" className="home">Bikes</a></li>
-                    <li role="presentation"><a href="/#testrides" className="home">My Test Rides</a></li>
-                    <li role="presentation"><a href="/#orders" className="home">My Orders</a></li>
-                    <li role="presentation"><a href="/#contact" className="home">Contact</a></li>
+                    <li role="presentation"><Link to="/home">Homee</Link></li>
+                    <li role="presentation"><Link to="/bikes">Bikes</Link></li>
+                    <li role="presentation"><Link to="/testrides">My Test Rides</Link></li>
+                    <li role="presentation"><Link to="/orders">My Orders</Link></li>
+                    <li role="presentation"><Link to="/contact">Contact</Link></li>
                 </ul>
 
             </div>);

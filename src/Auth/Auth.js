@@ -1,4 +1,5 @@
 import history from '../history';
+import { browserHistory } from 'react-router';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 
@@ -28,9 +29,9 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/home');
+        //history.replace('/home');
       } else if (err) {
-        history.replace('/home');
+        //history.replace('/home');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -44,7 +45,7 @@ export default class Auth {
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
     // navigate to the home route
-    history.replace('/home');
+    //history.replace('/home');
   }
 
   logout() {
@@ -52,8 +53,8 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    // navigate to the home route
-    history.replace('/home');
+      // navigate to the home route
+      window.location.href = "/home";
   }
 
   isAuthenticated() {

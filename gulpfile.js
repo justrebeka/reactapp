@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var conn = require('gulp-connect');
+var historyApiFallback = require('connect-history-api-fallback');
 var open = require('gulp-open');
 var browserify = require('browserify');
 var babelify = require('babelify');
@@ -31,13 +32,18 @@ gulp.task('conn', function () {
         root: ['public'],
         port: config.port,
         base: config.baseurl,
-        livereload: true
+        livereload: true,
+        middleware: function (connect, opt) {
+            return [
+                historyApiFallback({})
+            ]
+        }
     });
 });
 
 gulp.task('open', ['conn'], function () {
     gulp.src('public/index.html').
-        pipe(open({ uri: config.baseurl + ':' + config.port + "/#/home" }));
+        pipe(open({ uri: config.baseurl + ':' + config.port + "/home" }));
 });
 
 gulp.task('html', function () {

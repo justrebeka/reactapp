@@ -4,12 +4,15 @@ import Routes from './Routes.jsx';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import history from './history';
 import {
-    HashRouter
+    HashRouter,
+    BrowserRouter
 } from 'react-router-dom';
 
+
 ReactDOM.render((
-    <HashRouter >
+    <BrowserRouter history={history}>
         {Routes}
-    </HashRouter >
+    </BrowserRouter>
 ), document.getElementById('app'))

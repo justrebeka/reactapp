@@ -23,7 +23,7 @@ export default class Home extends React.Component{
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        <ul class="a"> 
+                        <ul className="aaa"> 
                             <li>De editat</li>
                             <li>Eficienta - Mai rapid ca masina sau autobuzul</li>
                             <li>Economie - Fara costuri de transport</li>

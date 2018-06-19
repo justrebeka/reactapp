@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+node_modules/
 
 # testing
 coverage
@@ -13,3 +14,9 @@ build
 .DS_Store
 .env
 npm-debug.log
+*.cache
+*.ide-shm
+*.lock
+*.ide-wal
+*.ide-shm
+.vs/ReactApp/v15/.suo

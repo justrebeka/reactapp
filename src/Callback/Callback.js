@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 class Callback extends Component {
+
+    componentDidMount() {
+        window.location.href = "/home";
+    }
+
   render() {
     const style = {
       position: 'absolute',

@@ -56,7 +56,6 @@ export default class Demo extends React.Component {
                   
                 </Griddle>
             </div>);
-
     }
 }
 

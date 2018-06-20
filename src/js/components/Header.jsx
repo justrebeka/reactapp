@@ -12,7 +12,7 @@ export default class Header extends React.Component{
             <div>
                 
                 <ul id="meniu" className="nav nav-tabs">
-                    <li role="presentation"><Link to="/home">Homee</Link></li>
+                    <li role="presentation" className="test"><Link to="/home">Home</Link></li>
                     <li role="presentation"><Link to="/bikes">Bikes</Link></li>
                     <li role="presentation"><Link to="/testrides">My Test Rides</Link></li>
                     <li role="presentation"><Link to="/orders">My Orders</Link></li>

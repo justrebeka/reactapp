@@ -89,6 +89,8 @@ C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\BikeSHop.pdb
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.DatabaseChanges.resources
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.csprojResolveAssemblyReference.cache
 C:\Users\rebeka.veres\Source\Repos\reactapp\obj\Debug\ReactApp.Migrations.ChangeOrder.resources
+C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\ApplicationInsights.config
+C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\src\Callback\loading.svg
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\roslyn\csc.exe
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\roslyn\csc.exe.config
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\roslyn\csc.rsp
@@ -115,8 +117,6 @@ C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\roslyn\vbc.exe.config
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\roslyn\vbc.rsp
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\roslyn\VBCSCompiler.exe
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\ApplicationInsights.config
-C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\src\Callback\loading.svg
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\BikeSHop.dll.config
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\BikeSHop.dll
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\BikeSHop.pdb
@@ -173,7 +173,6 @@ C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\Microsoft.AI.DependencyColl
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\radu-mihai.bochis\source\repos\reactapp\bin\Microsoft.AI.Web.xml
-C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\ReactApp.csprojAssemblyReference.cache
 C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\ReactApp.Migrations.AddDataENtities.resources
 C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\ReactApp.Migrations.DatabaseChanges.resources
 C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\ReactApp.Migrations.ChangeOrder.resources

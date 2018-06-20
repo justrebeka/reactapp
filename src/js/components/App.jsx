@@ -25,9 +25,15 @@ export default class App extends React.Component {
 
                 <div className="row">
                     <div className="col-md-2">
-                        <h1> Bike Shop </h1>
+                        <h1>EcoBikesTEST</h1>
                     </div>
-                    <div className="col-md-2 col-md-offset-8 align-center">
+                    <div className="col-md-2">
+                        <h1>EcoBikes</h1>
+                    </div>
+                    <div className="col-md-2">
+                        <img src={require('./eco.jpeg')} />
+                    </div>
+                    <div className="col-md-2 col-md-offset-3 align-center">
                         {
                             !isAuthenticated() && (
                                 <Button

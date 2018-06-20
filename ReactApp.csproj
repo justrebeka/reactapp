@@ -227,6 +227,7 @@
     </Content>
     <Content Include=".babelrc.json" />
     <Content Include="public\css\app.css" />
+    <Content Include="public\css\Styles.css" />
     <Content Include="src\actions\DemoActionCreator.jsx" />
     <Content Include="src\actions\DemoServerActionCreator.jsx" />
     <Content Include="src\api\DemoApi.jsx" />

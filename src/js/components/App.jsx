@@ -21,8 +21,6 @@ export default class App extends React.Component {
 
         return (
             <div>
-
-
                 <div className="row">
                     <div className="col-md-2">
                         <h1>EcoBikesTEST</h1>

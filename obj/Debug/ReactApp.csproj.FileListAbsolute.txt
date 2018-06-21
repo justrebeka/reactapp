@@ -181,3 +181,4 @@ C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\ReactApp.csproj.CoreC
 C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\ReactApp.csproj.CopyComplete
 C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\BikeSHop.dll
 C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\BikeSHop.pdb
+C:\Users\radu-mihai.bochis\source\repos\reactapp\obj\Debug\ReactApp.csprojAssemblyReference.cache

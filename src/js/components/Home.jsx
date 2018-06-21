@@ -8,66 +8,82 @@ export default class Home extends React.Component{
             <div className="jumbotron">
                 <div className="row">
                     <div className="col-md-12">
-                        <img src="https://www.islabikes.com/wp-content/uploads/2015/10/Cnoc16-Red-MY2016-SRGB-USA1.jpg" height="100%" width="100%" />
+                        <img src="https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/35742249_618368118538068_4089503447903109120_o.jpg?_nc_cat=0&oh=1cf96a14f74dd009941d2595e248810f&oe=5BEA1D25" height="100%" width="100%" />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        <h2>Bani economisiti si timp salvat pe doua roti!</h2>
+                        <br/>
+                        <h2>Bani economisiți și timp salvat pe două roți!</h2>
+                        <h3>Bicicleta sau trotineta face diferenta</h3>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6">
-                            <img src="https://www.islabikes.com/wp-content/uploads/2015/10/Cnoc16-Red-MY2016-SRGB-USA1.jpg" height="100%" width="100%" />
+                    <div className="col-md-7">
+                        <img src="https://www.bikecitizens.net/wp-content/uploads/2017/06/canberratransportphoto.jpg" height="100%" width="100%" />
                         </div>
-                    <div className="col-md-6">
+                    <div className="col-md-5">
                         <ul>
-                            <li className="lista">Eficienta - Mai rapid ca masina sau autobuzul</li>
-                            <h4>Fie ca e ora de varf sau nu, bicicleta te va duce la destinatie inaintea masinii.
-                               Nu ramai blocat in trafic, nu cauti loc de parcare, nu astepti in statie, nu te inghesui.</h4>
-                            <li className="lista">Economie - Fara costuri de transport</li>
-                            <h4>Nu te opresti sa alimentezi, nu cumperi bilet, nu platesti abonament.
-                                Este singurul mijloc de transport pentru care nu ai nevoie de portofelul la tine.</h4>
-                            <li className="lista">Sanatate - Miscare usoara zilnica</li>
-                            <h4>Problema sanatatii se raspandeste mai rapid ca un virus, iar noi nu gasim timp pentru miscare.
-                               Si aceasta problema este rezolvata cu ajutorul a doua roti, fara a investi timp suplimentar.</h4>
-                            <li className="lista">100% ecologic - Sursa de energie naturala</li>
-                            <h4>Protejezi natura. Nivelul de poluare este zero, acesta este inca un avantaj pentru sanatate.
-                               Mai putina poluare inseamna un oras mai sanatos.</h4>
+                            <li className="lista">Eficiență - Mai rapid ca mașina sau autobuzul</li>
+                            <h4>Fie că e oră de vârf sau nu, bicicleta te va duce la destinație înaintea mașinii.
+                               Nu rămâi blocat în trafic, nu cauți loc de parcare, nu aștepți în stație, nu te înghesui.<br />
+                                Bicicleta e mereu încărcată la capacitate maximă spre deosebire de mașină sau autobuz. Mai eficient
+                                de atât nu se poate. </h4>
+                            <li className="lista">Economie - Fără costuri de transport</li>
+                            <h4>Nu te oprești sa alimentezi, nu cumperi bilet, nu plătesti abonament.
+                                Este singurul mijloc de transport pentru care nu ai nevoie de portofel la tine.<br />
+                                Într-o singură lună de mers cu bicicleta la servici se vede diferența mare de plăți efectuate pentru combustibil
+                                sau pentru alte cheltuieli cu transportul</h4>
+                            <li className="lista">Sănătate - Mișcare ușoară zilnică</li>
+                            <h4>Problema sănătății se raspandeste mai rapid ca un virus, iar noi nu găsim timp pentru mișcare.
+                               Și această problemă este rezolvată cu ajutorul a două roți, fără a investi timp suplimentar.<br />
+                               Mașina cheltuie bani și acumuleaza colesterol, în timp ce bicicleta cheltuie colesterol și acumuleaza bani.</h4>
+                            <li className="lista">100% ecologic - Sursă de energie naturală</li>
+                            <h4>Protejezi natura. Nivelul de poluare este zero, acesta este încă un avantaj pentru sănătate.
+                               Mai puțină poluare înseamnă un oraș mai curat și mai sănătos.<br />
+                               Nu ne mai interesează standardele euro, acestea sunt pentru cei care umple aerul cu poluanți de la mașina.</h4>
                         </ul>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        <h2> Mai putine roti, mai multa distractie!</h2>
+                        <h2> <br /><br/>Mai puține roți, mai multă distracție!</h2>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        <p>
+                        <p> <br />
                             Ești mai vesel - chiar dacă ești supărat, stresat sau deprimat atunci când pleci la plimbare, totul se va schimba în următoarele 30 minute.
                             Activitățile fizice care presupun un efort cel mult moderat vor face organismul să secrete endorfine, fapt care luptă în mod direct 
-                            împotriva stresului și depresiei. Pleci cu bicicleta stresat și te întorci o altă persoană!
+                            împotriva stresului și depresiei. Pleci cu bicicleta stresat și te întorci o altă persoană!<br /><br />
+                            Plăcerea simplă de a te plimba și de a descoperi peisajul, combinată cu faptul că la fiecare ieșire îți simți corpul tot mai pregătit și 
+                            dornic pentru pedalare, face din mersul pe bicicletă un sport care ridică moralul. Aceasta ar fi o explicație pentru zâmbetul larg pe 
+                            care îl afișează iubitorii acestui sport.<br /><br/>
+                            Experții au ajuns la concluzia că mersul regulat pe bicicletă acționează ca un drog care potențează hormonul fericirii, însă fără nici un
+                            efect secundar. Ca să nu mai vorbim că, pedalând, îți va fi tot mai puțin poftă de o țigară, de alcool sau ciocolată – adicții periculoase,
+                            care te binedispun doar pentru moment, dar care se transformă în vicii pe termen lung. Așa că încalecă pe bicicleta ta și vei observa în
+                            scurt timp că nu mai ai nevoie decât de un zâmbet larg pentru a cuceri orașul și poate, mai apoi, lumea întreagă.
                         </p>
                     </div>
                     <div className="col-md-6">
-                        <img src="https://www.perfectbike.ro/image/data/Merida/2018/MATTS%206.10-V%20BLK.jpg" height="100%" width="100%"/>
+                        <img src="https://www.lakegeorge.com/whatsnew/wp-content/uploads/sites/5/2016/06/bike-family.jpg" height="100%" width="100%"/>
                     </div>
                 </div>
+                <br/>
                 <div className="row">
                     <div className="col-md-4">
                         <img src="https://wtop.com/wp-content/uploads/2017/05/051617_bike_dildine.jpg" height="100%" width="100%" />
                     </div>
-                    <div className="col-md-6">
-                        <p> Lorem Ipsum este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard
-                            a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru
-                            a crea o carte demonstrativă pentru literele respective. Nu doar că a supravieţuit timp de cinci secole, dar şi a facut
-                            saltul în tipografia electronică practic neschimbată. A fost popularizată în anii '60 odată cu ieşirea colilor Letraset
-                            care conţineau pasaje Lorem Ipsum, iar mai recent, prin programele de publicare pentru calculator, ca Aldus PageMaker
-                            care includeau versiuni de Lorem Ipsum.</p>
+                    <div className="col-md-4">
+                        <br/>
+                        <h2>Spune NU orelor pierdute în trafic </h2><br/>
+                        <p> E drept că orașul Cluj nu e cel mai prietenos pentru biciclete, mai ales dacă avem în vedere că uneori este foarte mult de urcat și ritmul
+                            este mai scăzut, dar în același timp putem fi bucuroși că totuși ne putem mișca. Șoferii privesc din trafic cum bicicletele și trotinetele
+                            trec pe lângă ei și indeferent câți cai au sub capotă, tot nu îi ajută la nimic. Cine are mai mult de două roți, le are spre dezavantajul
+                            său.</p>
                     </div>
-                    <div className="col-md-2">
-                        <img src="https://www.mariciu.ro/wp-content/uploads/2018/04/haos-pe-trotineta.jpg" height="100%" width="100%" />
+                    <div className="col-md-4">
+                        <img src="http://cdn.sibiu100.ro/wp-content/uploads/2015/06/DSC_4253-750x530.jpg" height="100%" width="100%" />
                     </div>
                 </div>
 

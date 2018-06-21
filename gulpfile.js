@@ -23,7 +23,8 @@ var config = {
         dist: './public',
         css: [
             '../node_modules/bootstrap/public/css/bootstrap-theme.min.css',
-            '../node_modules/bootstrap/public/css/bootstrap.min.css']
+            '../node_modules/bootstrap/public/css/bootstrap.min.css',
+            './src/css/_app.css']
     }
 }
 

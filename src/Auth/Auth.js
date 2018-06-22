@@ -4,7 +4,9 @@ import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 
 export default class Auth {
-  
+
+    userProfile;
+
     constructor() {
 
     this.auth0 = new auth0.WebAuth({
@@ -19,6 +21,8 @@ export default class Auth {
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
+    this.getAccessToken = this.getAccessToken.bind(this);
+    this.getProfile = this.getProfile.bind(this);
   }
 
   login() {
@@ -48,11 +52,30 @@ export default class Auth {
     //history.replace('/home');
   }
 
+  getAccessToken() {
+      const accessToken = localStorage.getItem('access_token');
+      if (!accessToken) {
+          throw new Error('No access token found');
+      }
+      return accessToken;
+  }
+
+  getProfile(cb) {
+      let accessToken = this.getAccessToken();
+      this.auth0.client.userInfo(accessToken, (err, profile) => {
+          if (profile) {
+              this.userProfile = profile;
+          }
+          cb(err, profile);
+      });
+  }
+
   logout() {
     // Clear access token and ID token from local storage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    this.userProfile = null;
       // navigate to the home route
       window.location.href = "/home";
   }

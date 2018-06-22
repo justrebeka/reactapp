@@ -14,8 +14,10 @@ export default class Header extends React.Component{
                 <ul id="meniu" className="nav nav-tabs">
                     <li role="presentation"><Link to="/home">Home</Link></li>
                     <li role="presentation"><Link to="/bikes">Bikes</Link></li>
-                    <li role="presentation"><Link to="/testrides">My Test Rides</Link></li>
-                    <li role="presentation"><Link to="/orders">My Orders</Link></li>
+                    {this.props.isAuthenticated && (
+                        <li role="presentation"><Link to="/testrides">My Test Rides</Link></li>)}
+                    {this.props.isAuthenticated && (
+                        <li role="presentation"><Link to="/orders">My Orders</Link></li>)}
                     <li role="presentation"><Link to="/contact">Contact</Link></li>
                 </ul>
 

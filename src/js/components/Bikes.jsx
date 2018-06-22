@@ -3,6 +3,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BootstrapPager } from 'griddle-react-bootstrap';
+import BikeDetails from './BikeDetails.jsx';
+import { Navbar, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 var DemoActionCreator = require('../../actions/DemoActionCreator.jsx');
 var DemoStore = require('../../stores/DemoStore.jsx');
@@ -14,9 +17,41 @@ export default class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bikes: DemoStore.getBikes()
+            bikes: DemoStore.getBikes(),
+            bikeId: undefined
         };
         this._onchange = this._onchange.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.order = this.order.bind(this);
+        this.afterOpenModal = this.afterOpenModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
+
+    openModal({ value, griddleKey, rowData }) {
+        this.setState({ bike: rowData });
+    }
+
+    orderCallback(err, profile) {
+        console.log(profile.sub);
+
+        }
+
+    order(bikeId) {
+
+        var a = this.props.auth.getProfile(this.orderCallback);
+        console.log(bikeId);
+
+
+       
+    }
+
+    afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        this.subtitle.style.color = '#f00';
+    }
+
+    closeModal() {
+        this.setState({ bike: undefined });
     }
 
     _onchange() {
@@ -31,7 +66,7 @@ export default class Demo extends React.Component {
         DemoStore.addChangeListener(this._onchange);
         DemoActionCreator.getBikes();
 
-    }
+    }  
 
     render() {
         const styleConfig = {
@@ -51,6 +86,37 @@ export default class Demo extends React.Component {
             }
         }
 
+        const rowDataSelector = (state, { griddleKey }) => {
+            return state
+                .get('data')
+                .find(rowMap => rowMap.get('griddleKey') === griddleKey)
+                .toJSON();
+        };
+
+        const enhancedWithRowData = connect((state, props) => {
+            return {
+                // rowData will be available into MyCustomComponent
+                rowData: rowDataSelector(state, props)
+            };
+        });
+
+        const ViewDetails = ({ value }) => <Button
+            id="qsLogoutBtn"
+            bsStyle="primary"
+            className="btn-margin"
+            onClick={this.openModal.bind(this)}></Button>;
+
+        const MyCustomComponent = ({ value, griddleKey, rowData }) => 
+         
+                <div className="MyCustomComponent">
+                <Button
+                    id="qsLogoutBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={() => this.openModal.bind(this)({ value, griddleKey, rowData })}> View details</Button>
+                </div>;
+       
+
         return (
             <div className="jumbotron">
                 <Griddle
@@ -67,8 +133,16 @@ export default class Demo extends React.Component {
                         <ColumnDefinition id="Weight" title="Weight" width={150} />
                         <ColumnDefinition id="Price" title="Price" width={150} />
                         <ColumnDefinition id="Image" title="Image" width={150} height={150} customComponent={ImageComponent} />
+                        <ColumnDefinition id="View" title="View" width={150} height={150} customComponent={enhancedWithRowData(MyCustomComponent)} />
                     </RowDefinition>
                 </Griddle>
+                {!!this.state.bike && (<BikeDetails
+                    bike={this.state.bike}
+                    onAfterOpen={this.afterOpenModal}
+                    closeModal={this.closeModal}
+                    order={() => this.order.bind(this)(this.state.bike.Id)}
+                        contentLabel="Bike details"
+                    ></BikeDetails>)}
             </div>);
 
     }

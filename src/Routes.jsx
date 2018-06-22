@@ -31,7 +31,7 @@ var Routes = (
     <div className="container-fluid">
         <Route path="/" render={(props) => <App auth={auth} {...props} />} />
         <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
-        <Route path="/bikes" component={Bikes} />
+        <Route path="/bikes" component={(props) => <Bikes auth={auth} {...props} />} />
         <Route path="/testrides" component={TestRides} />
         <Route path="/orders" component={Orders} />
         <Route path="/contact" component={Contact} />

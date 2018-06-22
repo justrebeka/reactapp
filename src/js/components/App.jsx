@@ -10,6 +10,18 @@ const path = "./eco.jpeg";
 
 export default class App extends React.Component {
 
+    componentWillMount() {
+        this.setState({ profile: {} });
+        const { userProfile, getProfile } = this.props.auth;
+        if (this.props.auth.isAuthenticated() && !userProfile) {
+            getProfile((err, profile) => {
+                this.setState({ profile });
+            });
+        } else {
+            this.setState({ profile: userProfile });
+        }
+    }
+
     login() {
         this.props.auth.login();
     }
@@ -20,6 +32,7 @@ export default class App extends React.Component {
 
     render() {
         const { isAuthenticated } = this.props.auth;
+        const { profile } = this.state;
 
         return (
             <div>
@@ -65,13 +78,13 @@ export default class App extends React.Component {
                                     className="btn-margin"
                                     onClick={this.logout.bind(this)}
                                 >
-                                    Log Out
+                                    Log Out, {profile.name}
                   </Button>
                             )
                         }
                     </div>
                 </div>
-                <Header />
+                <Header isAuthenticated={isAuthenticated()} />
 
                 </div>
             )

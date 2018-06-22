@@ -205,6 +205,14 @@
     <Compile Include="Migrations\201805271149564_ChangeOrder.Designer.cs">
       <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806211955430_Add ImgUrl.cs" />
+    <Compile Include="Migrations\201806211955430_Add ImgUrl.Designer.cs">
+      <DependentUpon>201806211955430_Add ImgUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806212034154_Rename ImgUrl to Image.cs" />
+    <Compile Include="Migrations\201806212034154_Rename ImgUrl to Image.Designer.cs">
+      <DependentUpon>201806212034154_Rename ImgUrl to Image.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\OrderController.cs" />
     <Compile Include="Presentation\Controllers\TestRideController.cs" />
@@ -269,6 +277,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271149564_ChangeOrder.resx">
       <DependentUpon>201805271149564_ChangeOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806211955430_Add ImgUrl.resx">
+      <DependentUpon>201806211955430_Add ImgUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806212034154_Rename ImgUrl to Image.resx">
+      <DependentUpon>201806212034154_Rename ImgUrl to Image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

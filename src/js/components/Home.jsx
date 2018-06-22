@@ -14,8 +14,8 @@ export default class Home extends React.Component{
                 <div className="row">
                     <div className="col-md-6">
                         <br/>
-                        <h2>Bani economisiți și timp salvat pe două roți!</h2>
-                        <h3>Bicicleta sau trotineta face diferenta</h3>
+                        <h2 id="titlu1">Bani economisiți și timp salvat pe două roți!</h2>
+                        <h3 id="subtitlu1">Bicicleta sau trotineta face diferenta</h3>
                     </div>
                 </div>
                 <div className="row">
@@ -24,21 +24,21 @@ export default class Home extends React.Component{
                         </div>
                     <div className="col-md-5">
                         <ul>
-                            <li className="lista">Eficiență - Mai rapid ca mașina sau autobuzul</li>
+                            <li className="lista" id="bullet">Eficiență - Mai rapid ca mașina sau autobuzul</li>
                             <h4>Fie că e oră de vârf sau nu, bicicleta te va duce la destinație înaintea mașinii.
                                Nu rămâi blocat în trafic, nu cauți loc de parcare, nu aștepți în stație, nu te înghesui.<br />
                                 Bicicleta e mereu încărcată la capacitate maximă spre deosebire de mașină sau autobuz. Mai eficient
                                 de atât nu se poate. </h4>
-                            <li className="lista">Economie - Fără costuri de transport</li>
+                            <li className="lista" id="bullet">Economie - Fără costuri de transport</li>
                             <h4>Nu te oprești sa alimentezi, nu cumperi bilet, nu plătesti abonament.
                                 Este singurul mijloc de transport pentru care nu ai nevoie de portofel la tine.<br />
                                 Într-o singură lună de mers cu bicicleta la servici se vede diferența mare de plăți efectuate pentru combustibil
                                 sau pentru alte cheltuieli cu transportul</h4>
-                            <li className="lista">Sănătate - Mișcare ușoară zilnică</li>
+                            <li className="lista" id="bullet">Sănătate - Mișcare ușoară zilnică</li>
                             <h4>Problema sănătății se raspandeste mai rapid ca un virus, iar noi nu găsim timp pentru mișcare.
                                Și această problemă este rezolvată cu ajutorul a două roți, fără a investi timp suplimentar.<br />
                                Mașina cheltuie bani și acumuleaza colesterol, în timp ce bicicleta cheltuie colesterol și acumuleaza bani.</h4>
-                            <li className="lista">100% ecologic - Sursă de energie naturală</li>
+                            <li className="lista" id="bullet">100% ecologic - Sursă de energie naturală</li>
                             <h4>Protejezi natura. Nivelul de poluare este zero, acesta este încă un avantaj pentru sănătate.
                                Mai puțină poluare înseamnă un oraș mai curat și mai sănătos.<br />
                                Nu ne mai interesează standardele euro, acestea sunt pentru cei care umple aerul cu poluanți de la mașina.</h4>

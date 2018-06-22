@@ -29,7 +29,7 @@ namespace ReactApp.Presentation.Model
         public int Price { get; set; }
         public string FrameSeries { get; set; }
         public int RiderHeight { get; set; }
-
+        public string Image { get; set; }
 
         public ReactApp.Business.Model.Bike ToBusiness()
         {
@@ -66,8 +66,8 @@ namespace ReactApp.Presentation.Model
                 MaxLoad = bike.MaxLoad,
                 Price = bike.Price,
                 FrameSeries = bike.FrameSeries,
-                RiderHeight = bike.RiderHeight
-
+                RiderHeight = bike.RiderHeight,
+                Image = bike.Image
             };
 
         }

@@ -24,6 +24,7 @@
         public int Price { get; set; }
         public string FrameSeries { get; set; }
         public int RiderHeight { get; set; }
+        public string Image { get; set; }
 
         public Engine Engine { get; set; }
         public Battery Battery { get; set; }

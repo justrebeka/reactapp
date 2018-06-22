@@ -30,6 +30,7 @@ namespace ReactApp.Data.Model
 
         public int EngineId { get; set; }
         public int BatteryId { get; set; }
+        public string Image { get; set; }
 
         [ForeignKey("EngineId")]
         public virtual Engine Engine {get; set; }
@@ -62,7 +63,8 @@ namespace ReactApp.Data.Model
                 MaxLoad = bike.MaxLoad,
                 Price = bike.Price,
                 FrameSeries = bike.FrameSeries,
-                RiderHeight = bike.RiderHeight
+                RiderHeight = bike.RiderHeight,
+                Image = bike.Image
             };
         }
     }

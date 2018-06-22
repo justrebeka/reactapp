@@ -4,6 +4,13 @@
 node_modules
 node_modules/
 
+packages
+bin
+obj
+.vs
+
+*.user
+
 # testing
 coverage
 

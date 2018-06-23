@@ -33,5 +33,31 @@ module.exports = {
 
                 DemoServerActionCreator.receiveOrdersResponse(response.body);
             });
+    },
+    createOrder: function (userId, bikeId) {
+
+        request
+            .post('http://localhost:3039/api/Order')
+            .send({ userId: userId, bikeId: bikeId })
+            .withCredentials()
+            .set('Accept', 'application/json')
+            .set('Access-Control-Allow-Origin', 'http://localhost:8080')
+            .set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+            .set('Access-Control-Allow-Credentials', true)
+            .set('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+            .then(function (res) {
+                DemoServerActionCreator.receiveCreateOrderResponse(response.body);
+            });
+      ;
+    },
+    testBike: function (userId, bikeId, date) {
+
+        request
+            .post('http://localhost:3039/api/TestRide')
+            .send({ userId: userId, bikeId: bikeId , date:date})
+            .set('Accept', 'application/json')
+            .then(function (res) {
+                DemoServerActionCreator.receiveTestBikeResponse(response.body);
+            });
     }
 };

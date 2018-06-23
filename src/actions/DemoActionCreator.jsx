@@ -12,24 +12,12 @@ var DemoActionCreator = {
 
         DemoApi.getBikes();
     },
-    receiveBikesResponse: function (response) {
-        Dispatcher.handleServerAction({
-            actionType: ActionTypes.GET_BIKES_RESPONSE,
-            response: response
-        });
-    },
     getTestRides: function (userId) {
         Dispatcher.handleViewAction({
             actionType: ActionTypes.GET_TESTRIDES,
         });
 
         DemoApi.getTestRides(userId);
-    },
-    receiveBikesResponse: function (response) {
-        Dispatcher.handleServerAction({
-            actionType: ActionTypes.GET_TESTRIDES_RESPONSE,
-            response: response
-        });
     },
     getOrders: function (userId) {
         Dispatcher.handleViewAction({
@@ -38,12 +26,20 @@ var DemoActionCreator = {
 
         DemoApi.getOrders(userId);
     },
-    receiveOrdersResponse: function (response) {
-        Dispatcher.handleServerAction({
-            actionType: ActionTypes.GET_ORDERS_RESPONSE,
-            response: response
+    createOrder: function (userId, bikeId) {
+        Dispatcher.handleViewAction({
+            actionType: ActionTypes.CREATE_ORDER,
         });
-    }
+
+        DemoApi.createOrder(userId, bikeId);
+    },
+    testBike: function (userId, bikeId, date) {
+        Dispatcher.handleViewAction({
+            actionType: ActionTypes.TEST_BIKE,
+        });
+
+        DemoApi.testBike(userId, bikeId, date);
+    },
 
 };
 

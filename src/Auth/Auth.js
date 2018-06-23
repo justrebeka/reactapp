@@ -68,6 +68,8 @@ export default class Auth {
           }
           cb(err, profile);
       });
+
+      return this.userProfile;
   }
 
   logout() {

@@ -21,7 +21,19 @@ var DemoServerActionCreator = {
             actionType: ActionTypes.GET_ORDERS_RESPONSE,
             response: response
         });
-    }
+    },
+    receiveCreateOrderResponse: function (response) {
+        Dispatcher.handleServerAction({
+            actionType: ActionTypes.RECEIVE_CREATE_ORDER_RESPONSE,
+            response: response
+        });
+    },
+    receiveTestBikeResponse: function (response) {
+        Dispatcher.handleServerAction({
+            actionType: ActionTypes.RECEIVE_TEST_BIKE_RESPONSE,
+            response: response
+        });
+    },
 
 };
 

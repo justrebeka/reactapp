@@ -23,6 +23,7 @@ export default class Demo extends React.Component {
         this._onchange = this._onchange.bind(this);
         this.openModal = this.openModal.bind(this);
         this.order = this.order.bind(this);
+        this.testBike = this.testBike.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
@@ -39,10 +40,13 @@ export default class Demo extends React.Component {
     order(bikeId) {
 
         var a = this.props.auth.getProfile(this.orderCallback);
-        console.log(bikeId);
+        DemoActionCreator.createOrder(a.sub, bikeId);        
+    }
 
+    testBike(bikeId) {
 
-       
+        var a = this.props.auth.getProfile(() => { });
+        DemoActionCreator.testBike(a.sub, bikeId, date);
     }
 
     afterOpenModal() {

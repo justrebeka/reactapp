@@ -24,7 +24,7 @@ export default class BikeDetails extends React.Component {
                     <p>Ghidon: {this.props.bike.Handlebar}</p>
                     <Button onClick={this.props.closeModal}>Close</Button>
                     <Button onClick={this.props.order}>Order</Button>
-                    <Button onClick={this.props.testBike}>Test bike</Button>
+                    <Button onClick={this.props.testBike}>Test Ride</Button>
                    
                  
                 </Modal>

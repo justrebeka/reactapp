@@ -88784,7 +88784,7 @@ var BikeDetails = function (_React$Component) {
                     _react2.default.createElement(
                         _reactBootstrap.Button,
                         { onClick: this.props.testBike },
-                        'Test bike'
+                        'Test Ride'
                     )
                 )
             );

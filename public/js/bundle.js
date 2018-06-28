@@ -88748,43 +88748,73 @@ var BikeDetails = function (_React$Component) {
                         onRequestClose: this.props.closeModal,
                         contentLabel: 'Example Modal' },
                     _react2.default.createElement(
-                        'p',
-                        null,
-                        'Model: ',
-                        this.props.bike.Model
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-6' },
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Model: ',
+                                this.props.bike.Model
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Cadru: ',
+                                this.props.bike.Frame
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Furca: ',
+                                this.props.bike.Fork
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Ghidon: ',
+                                this.props.bike.Handlebar
+                            ),
+                            '// pui aici restul proprietatilor'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-6' },
+                            _react2.default.createElement('img', { src: this.props.bike.Image, width: '50%', height: '50%' })
+                        )
                     ),
                     _react2.default.createElement(
-                        'p',
-                        null,
-                        'Cadru: ',
-                        this.props.bike.Frame
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Furca: ',
-                        this.props.bike.Fork
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Ghidon: ',
-                        this.props.bike.Handlebar
-                    ),
-                    _react2.default.createElement(
-                        _reactBootstrap.Button,
-                        { onClick: this.props.closeModal },
-                        'Close'
-                    ),
-                    _react2.default.createElement(
-                        _reactBootstrap.Button,
-                        { onClick: this.props.order },
-                        'Order'
-                    ),
-                    _react2.default.createElement(
-                        _reactBootstrap.Button,
-                        { onClick: this.props.testBike },
-                        'Test Ride'
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-xs-1' },
+                            _react2.default.createElement(
+                                _reactBootstrap.Button,
+                                { className: 'btn btn-primary', onClick: this.props.closeModal },
+                                'Close'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-xs-1' },
+                            _react2.default.createElement(
+                                _reactBootstrap.Button,
+                                { className: 'btn btn-primary', onClick: this.props.order },
+                                'Order'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-xs-1' },
+                            _react2.default.createElement(
+                                _reactBootstrap.Button,
+                                { className: 'btn btn-primary', onClick: this.props.testBike },
+                                'Test Ride'
+                            )
+                        )
                     )
                 )
             );

@@ -16,18 +16,18 @@ namespace ReactApp.Presentation.Controllers
         public int bikeId { get; set; }
 
     }
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+
     public class OrderController : ApiController
     {
         public OrderManager orderManager = new OrderManager();
 
 
         // GET api/bike
-        public IEnumerable<ReactApp.Presentation.Model.Order> GetOrdersForUser(int userId = 1)
+        public IEnumerable<ReactApp.Presentation.Model.Order> GetOrdersForUser(string accessKey)
         {
             System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
 
-            var orders = orderManager.GetOrdersForUser(userId);
+            var orders = orderManager.GetOrdersForUser(accessKey);
 
             return orders.Select(b => Presentation.Model.Order.FromDomainEntity(b));
 
@@ -36,8 +36,7 @@ namespace ReactApp.Presentation.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromBody]Order order)
         {
-
-            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+            orderManager.CreateOrder(order.userId, order.bikeId);
             return Ok();
         }
 

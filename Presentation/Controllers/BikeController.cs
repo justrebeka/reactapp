@@ -15,8 +15,6 @@ namespace ReactApp.Presentation.Controllers
         // GET api/bike
         public IEnumerable<ReactApp.Presentation.Model.Bike> Get()
         {
-            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-
             var bikes = bikeManager.GetBikes();
 
             return bikes.Select(b => Presentation.Model.Bike.FromDomainEntity(b));
@@ -26,8 +24,6 @@ namespace ReactApp.Presentation.Controllers
         // GET api/bike/5
         public Model.Bike Get(int id)
         {
-            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-
             Business.Model.Bike bike = bikeManager.GetBike(id);
 
             return Model.Bike.FromDomainEntity(bike);

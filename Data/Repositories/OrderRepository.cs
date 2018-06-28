@@ -6,7 +6,7 @@ namespace ReactApp.Data
 {
     public class OrderRepository
     {
-        public List<Business.Model.Order> GetOrdersForUser(int userId)
+        public List<Business.Model.Order> GetOrdersForUser(string userId)
         {
             var orders = new List<Data.Model.Order>();
             using (var db = new BikeShopContext())
@@ -27,8 +27,10 @@ namespace ReactApp.Data
         {
             using (var db = new BikeShopContext())
             {
-                // Create and save a new Order               
-                db.Orders.Add(new Data.Model.Order { Id = order.Id });
+                // Create and save a new Order   
+                var dbEntity = Business.Model.Order.ToDataEntity(order);
+                db.Orders.Add(dbEntity);
+
                 db.SaveChanges();
             }
         }

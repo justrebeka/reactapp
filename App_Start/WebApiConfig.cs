@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ReactApp
 {
@@ -11,6 +12,8 @@ namespace ReactApp
         {
             // Web API configuration and services
 
+            var cors = new EnableCorsAttribute("http://localhost:8080", "*", "*");
+            config.EnableCors(cors);
             // Web API routes
             config.MapHttpAttributeRoutes();
 

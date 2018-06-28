@@ -75,6 +75,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.Cors.5.2.6\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -173,6 +174,7 @@
     <Compile Include="Business\Logic\BikeManager.cs" />
     <Compile Include="Business\Logic\OrderManager.cs" />
     <Compile Include="Business\Logic\TestRideManager.cs" />
+    <Compile Include="Business\Logic\UserManager.cs" />
     <Compile Include="Business\Model\AccessoryType.cs" />
     <Compile Include="Business\Model\Accessory.cs" />
     <Compile Include="Business\Model\Battery.cs" />
@@ -196,6 +198,7 @@
     <Compile Include="Data\Repositories\BikeRepository.cs" />
     <Compile Include="Data\Repositories\OrderRepository.cs" />
     <Compile Include="Data\Repositories\TestRideRepository.cs" />
+    <Compile Include="Data\Repositories\UserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +221,10 @@
     <Compile Include="Migrations\201806212034154_Rename ImgUrl to Image.cs" />
     <Compile Include="Migrations\201806212034154_Rename ImgUrl to Image.Designer.cs">
       <DependentUpon>201806212034154_Rename ImgUrl to Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806261429264_UserMigration.cs" />
+    <Compile Include="Migrations\201806261429264_UserMigration.Designer.cs">
+      <DependentUpon>201806261429264_UserMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\OrderController.cs" />
@@ -289,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806212034154_Rename ImgUrl to Image.resx">
       <DependentUpon>201806212034154_Rename ImgUrl to Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806261429264_UserMigration.resx">
+      <DependentUpon>201806261429264_UserMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

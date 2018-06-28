@@ -1,3 +1,12 @@
+.denumire {
+    font-size:200%;
+}
+
+.bani {
+    font-size: 200%;
+    color: darkred;
+}
+
 h1 {
     color: white;
     text-align:center;
@@ -10,6 +19,7 @@ h1 {
 ul#meniu li a {
     background-color: black;
     color: white;
+    border-radius:5px;
 }
 
 ul#meniu li a:hover{
@@ -24,6 +34,8 @@ ul#meniu li a:focus {
 
 h3#contact {
     background-color:midnightblue;
+    padding:10px;
+    border-radius:10px;
     color:lightcyan;
     font-family:'Lucida Handwriting';  
     text-align:center;

@@ -62,7 +62,7 @@ export default class App extends React.Component {
                             !isAuthenticated() && (
                                 <Button
                                     id="qsLoginBtn"
-                                    bsStyle="primary"
+                                    bsStyle="success"
                                     className="btn-margin"
                                     onClick={this.login.bind(this)}
                                 >
@@ -74,11 +74,11 @@ export default class App extends React.Component {
                             isAuthenticated() && (
                                 <Button
                                     id="qsLogoutBtn"
-                                    bsStyle="primary"
+                                    bsStyle="danger"
                                     className="btn-margin"
                                     onClick={this.logout.bind(this)}
                                 >
-                                    Log Out, {profile.name}
+                                    Log Out {profile.name}
                   </Button>
                             )
                         }

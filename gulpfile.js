@@ -22,9 +22,8 @@ var config = {
         indexJs: './src/Index.jsx',
         dist: './public',
         css: [
-            '../node_modules/bootstrap/public/css/bootstrap-theme.min.css',
-            '../node_modules/bootstrap/public/css/bootstrap.min.css',
-            './src/css/_app.css']
+            './node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+            './node_modules/bootstrap/dist/css/bootstrap.min.css']
     }
 }
 

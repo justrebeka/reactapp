@@ -31,7 +31,7 @@ namespace ReactApp.Data
             using (var db = new BikeShopContext())
             {
                 // Create and save a new User               
-                db.Users.Add(new Data.Model.User { Name = user.Name });
+                db.Users.Add(new Data.Model.User { Name = user.Name, AccessKey = user.AccessKey });
                 db.SaveChanges();
             }
         }

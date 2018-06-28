@@ -40,11 +40,10 @@ module.exports = {
             .post('http://localhost:3039/api/Order')
             .send({ userId: userId, bikeId: bikeId })
             .withCredentials()
-            .set('Accept', 'application/json')
             .set('Access-Control-Allow-Origin', 'http://localhost:8080')
-            .set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+            .set('Access-Control-Allow-Methods', 'POST')
             .set('Access-Control-Allow-Credentials', true)
-            .set('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+            .set('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization')
             .then(function (res) {
                 DemoServerActionCreator.receiveCreateOrderResponse(response.body);
             });

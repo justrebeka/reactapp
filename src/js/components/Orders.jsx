@@ -10,14 +10,15 @@ import Griddle, { plugins, RowDefinition, ColumnDefinition } from 'griddle-react
 export default class Demo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            orders: DemoStore.getOrders(this.props.userId)
+       
+        this.state = {         
+            orders: []
         };
         this._onchange = this._onchange.bind(this);
     }
 
     _onchange() {
-        this.setState({ bikes: DemoStore.getOrders() });
+        this.setState({ orders: DemoStore.getOrders() });
     }
 
     componentWillUnmount() {
@@ -25,8 +26,9 @@ export default class Demo extends React.Component {
     }
 
     componentDidMount() {
+        var a = this.props.auth.getProfile(() => { });
         DemoStore.addChangeListener(this._onchange);
-        DemoActionCreator.getOrders(this.props.userId);
+        DemoActionCreator.getOrders(a.sub);
 
     }
 

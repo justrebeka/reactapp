@@ -88330,8 +88330,12 @@ var Routes = React.createElement(
     React.createElement(_reactRouterDom.Route, { path: "/bikes", component: function component(props) {
             return React.createElement(_Bikes2.default, _extends({ auth: auth }, props));
         } }),
-    React.createElement(_reactRouterDom.Route, { path: "/testrides", component: _TestRides2.default }),
-    React.createElement(_reactRouterDom.Route, { path: "/orders", component: _Orders2.default }),
+    React.createElement(_reactRouterDom.Route, { path: "/testrides", component: function component(props) {
+            return React.createElement(_TestRides2.default, _extends({ auth: auth }, props));
+        } }),
+    React.createElement(_reactRouterDom.Route, { path: "/orders", component: function component(props) {
+            return React.createElement(_Orders2.default, _extends({ auth: auth }, props));
+        } }),
     React.createElement(_reactRouterDom.Route, { path: "/contact", component: _Contact2.default }),
     React.createElement(_reactRouterDom.Route, { path: "/callback", render: function render(props) {
             handleAuthentication(props);
@@ -88378,12 +88382,12 @@ var DemoActionCreator = {
 
         DemoApi.createOrder(userId, bikeId);
     },
-    testBike: function testBike(userId, bikeId, date) {
+    testBike: function testBike(userId, bikeId) {
         Dispatcher.handleViewAction({
             actionType: ActionTypes.TEST_BIKE
         });
 
-        DemoApi.testBike(userId, bikeId, date);
+        DemoApi.testBike(userId, bikeId);
     }
 
 };
@@ -88451,7 +88455,7 @@ module.exports = {
     },
     getTestRides: function getTestRides(userId) {
 
-        request.get('http://localhost:3039/api/TestRide/' + userId).set('Accept', 'application/json').end(function (err, response) {
+        request.get('http://localhost:3039/api/TestRide').set('Accept', 'application/json').query({ accessKey: userId }).end(function (err, response) {
             if (err) return console.error(err);
 
             DemoServerActionCreator.receiveTestRidesResponse(response.body);
@@ -88459,7 +88463,7 @@ module.exports = {
     },
     getOrders: function getOrders(userId) {
 
-        request.get('http://localhost:3039/api/Order/' + userId).set('Accept', 'application/json').end(function (err, response) {
+        request.get('http://localhost:3039/api/Order').set('Accept', 'application/json').query({ accessKey: userId }).end(function (err, response) {
             if (err) return console.error(err);
 
             DemoServerActionCreator.receiveOrdersResponse(response.body);
@@ -88467,14 +88471,14 @@ module.exports = {
     },
     createOrder: function createOrder(userId, bikeId) {
 
-        request.post('http://localhost:3039/api/Order').send({ userId: userId, bikeId: bikeId }).withCredentials().set('Access-Control-Allow-Origin', 'http://localhost:8080').set('Access-Control-Allow-Methods', 'POST').set('Access-Control-Allow-Credentials', true).set('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization').then(function (res) {
+        request.post('http://localhost:3039/api/Order').send({ userId: userId, bikeId: bikeId }).then(function (res) {
             DemoServerActionCreator.receiveCreateOrderResponse(response.body);
         });
         ;
     },
     testBike: function testBike(userId, bikeId, date) {
 
-        request.post('http://localhost:3039/api/TestRide').send({ userId: userId, bikeId: bikeId, date: date }).set('Accept', 'application/json').then(function (res) {
+        request.post('http://localhost:3039/api/TestRide').send({ userId: userId, bikeId: bikeId }).set('Accept', 'application/json').then(function (res) {
             DemoServerActionCreator.receiveTestBikeResponse(response.body);
         });
     }
@@ -88667,7 +88671,7 @@ var App = function (_React$Component) {
                             _reactBootstrap.Button,
                             {
                                 id: 'qsLoginBtn',
-                                bsStyle: 'primary',
+                                bsStyle: 'success',
                                 className: 'btn-margin',
                                 onClick: this.login.bind(this)
                             },
@@ -88677,11 +88681,11 @@ var App = function (_React$Component) {
                             _reactBootstrap.Button,
                             {
                                 id: 'qsLogoutBtn',
-                                bsStyle: 'primary',
+                                bsStyle: 'danger',
                                 className: 'btn-margin',
                                 onClick: this.logout.bind(this)
                             },
-                            'Log Out, ',
+                            'Log Out ',
                             profile.name
                         )
                     )
@@ -88739,6 +88743,7 @@ var BikeDetails = function (_React$Component) {
     _createClass(BikeDetails, [{
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -88754,13 +88759,25 @@ var BikeDetails = function (_React$Component) {
                         { className: 'row' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-md-6' },
+                            { className: 'col-md-12' },
                             _react2.default.createElement(
                                 'p',
-                                null,
+                                { className: 'denumire' },
                                 'Model: ',
                                 this.props.bike.Model
                             ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'bani' },
+                                'Pret: ',
+                                this.props.bike.Price,
+                                ' lei'
+                            ),
+                            _react2.default.createElement('br', null)
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-6' },
                             _react2.default.createElement(
                                 'p',
                                 null,
@@ -88779,12 +88796,110 @@ var BikeDetails = function (_React$Component) {
                                 'Ghidon: ',
                                 this.props.bike.Handlebar
                             ),
-                            '// pui aici restul proprietatilor'
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Computer: ',
+                                this.props.bike.Computer
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Greutate: ',
+                                this.props.bike.Weight,
+                                ' kg'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Inaltime: ',
+                                this.props.bike.RiderHeight,
+                                ' cm'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Lant: ',
+                                this.props.bike.Chain
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Sa: ',
+                                this.props.bike.Saddle
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Manete Frane: ',
+                                this.props.bike.BreakLevers
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Incarcatura Maxima: ',
+                                this.props.bike.MaxLoad,
+                                ' kg'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Suspensie Cadru: ',
+                                this.props.bike.FrameSuspension
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Suspensie Furca: ',
+                                this.props.bike.ForkSuspension
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Manete Schimbatoare: ',
+                                this.props.bike.ShiftLevers
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Schimbator Spate: ',
+                                this.props.bike.RearGear
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Schimbator Fata: ',
+                                this.props.bike.FrontGear
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Frane: ',
+                                this.props.bike.Breaks
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Jante: ',
+                                this.props.bike.Rims
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Serie Cadru: ',
+                                this.props.bike.FrameSeries
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Pedale: ',
+                                this.props.bike.Pedals
+                            )
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-md-6' },
-                            _react2.default.createElement('img', { src: this.props.bike.Image, width: '50%', height: '50%' })
+                            { className: 'col-md-4' },
+                            _react2.default.createElement('img', { src: this.props.bike.Image, width: '100%' })
                         )
                     ),
                     _react2.default.createElement(
@@ -88796,24 +88911,24 @@ var BikeDetails = function (_React$Component) {
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
                                 { className: 'btn btn-primary', onClick: this.props.closeModal },
-                                'Close'
+                                'Back'
                             )
                         ),
-                        _react2.default.createElement(
+                        !!this.props.isAuthenticated && _react2.default.createElement(
                             'div',
                             { className: 'col-xs-1' },
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
-                                { className: 'btn btn-primary', onClick: this.props.order },
+                                { className: 'btn btn-danger pull-right', onClick: this.props.order },
                                 'Order'
                             )
                         ),
-                        _react2.default.createElement(
+                        !!this.props.isAuthenticated && _react2.default.createElement(
                             'div',
                             { className: 'col-xs-1' },
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
-                                { className: 'btn btn-primary', onClick: this.props.testBike },
+                                { className: 'btn btn-danger', onClick: this.props.testBike },
                                 'Test Ride'
                             )
                         )
@@ -88907,15 +89022,10 @@ var Demo = function (_React$Component) {
             this.setState({ bike: rowData });
         }
     }, {
-        key: 'orderCallback',
-        value: function orderCallback(err, profile) {
-            console.log(profile.sub);
-        }
-    }, {
         key: 'order',
         value: function order(bikeId) {
 
-            var a = this.props.auth.getProfile(this.orderCallback);
+            var a = this.props.auth.getProfile(function () {});
             DemoActionCreator.createOrder(a.sub, bikeId);
         }
     }, {
@@ -88923,7 +89033,7 @@ var Demo = function (_React$Component) {
         value: function testBike(bikeId) {
 
             var a = this.props.auth.getProfile(function () {});
-            DemoActionCreator.testBike(a.sub, bikeId, date);
+            DemoActionCreator.testBike(a.sub, bikeId);
         }
     }, {
         key: 'afterOpenModal',
@@ -89027,6 +89137,8 @@ var Demo = function (_React$Component) {
                 );
             };
 
+            var isAuthenticated = this.props.auth.isAuthenticated;
+
             return _react2.default.createElement(
                 'div',
                 { className: 'jumbotron' },
@@ -89052,11 +89164,15 @@ var Demo = function (_React$Component) {
                     )
                 ),
                 !!this.state.bike && _react2.default.createElement(_BikeDetails2.default, {
+                    isAuthenticated: isAuthenticated,
                     bike: this.state.bike,
                     onAfterOpen: this.afterOpenModal,
                     closeModal: this.closeModal,
                     order: function order() {
                         return _this2.order.bind(_this2)(_this2.state.bike.Id);
+                    },
+                    testBike: function testBike() {
+                        return _this2.testBike.bind(_this2)(_this2.state.bike.Id);
                     },
                     contentLabel: 'Bike details'
                 })
@@ -89115,31 +89231,17 @@ var Home = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         "div",
-                        { className: "col-md-2" },
+                        { className: "col-md-6" },
                         _react2.default.createElement(
                             "h2",
                             null,
-                            "Ne gasiti la adresa ecobikes@clujnapoca.ro"
+                            "Ne g\u0103si\u021Bi la adresa  ecobikes@clujnapoca.ro ",
+                            _react2.default.createElement("br", null),
+                            _react2.default.createElement("br", null),
+                            "Luni - Vineri: 08:00 - 22:00",
+                            _react2.default.createElement("br", null),
+                            "S\xE2mb\u0103t\u0103, Duminic\u0103 - \xCENCHIS"
                         )
-                    ),
-                    _react2.default.createElement(
-                        "div",
-                        { className: "col-md-2" },
-                        _react2.default.createElement("img", { src: "https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/35812525_618422608532619_5771666271720439808_o.jpg?_nc_cat=0&oh=7ac1a458b6b4a0f595f1bb90b1a0ed99&oe=5BB6D2A3", height: "70%", width: "70%" })
-                    )
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "row" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "col-md-2" },
-                        _react2.default.createElement("img", { src: "https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/35884820_618367771871436_3404103268203233280_n.jpg?_nc_cat=0&oh=0871db9ad1996095623af9e9825a997f&oe=5BAA1179", height: "100%", width: "100%" })
-                    ),
-                    _react2.default.createElement(
-                        "div",
-                        { className: "col-md-2" },
-                        _react2.default.createElement("img", { src: "https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/35812525_618422608532619_5771666271720439808_o.jpg?_nc_cat=0&oh=7ac1a458b6b4a0f595f1bb90b1a0ed99&oe=5BB6D2A3", height: "70%", width: "70%" })
                     )
                 )
             );
@@ -89499,7 +89601,7 @@ var Demo = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
 
         _this.state = {
-            orders: DemoStore.getOrders(_this.props.userId)
+            orders: []
         };
         _this._onchange = _this._onchange.bind(_this);
         return _this;
@@ -89508,7 +89610,7 @@ var Demo = function (_React$Component) {
     _createClass(Demo, [{
         key: '_onchange',
         value: function _onchange() {
-            this.setState({ bikes: DemoStore.getOrders() });
+            this.setState({ orders: DemoStore.getOrders() });
         }
     }, {
         key: 'componentWillUnmount',
@@ -89518,8 +89620,9 @@ var Demo = function (_React$Component) {
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var a = this.props.auth.getProfile(function () {});
             DemoStore.addChangeListener(this._onchange);
-            DemoActionCreator.getOrders(this.props.userId);
+            DemoActionCreator.getOrders(a.sub);
         }
     }, {
         key: 'render',
@@ -89604,8 +89707,9 @@ var Demo = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
 
+        var a = props.auth.getProfile(function () {});
         _this.state = {
-            testRides: DemoStore.getTestRides(props.userId)
+            testRides: []
         };
         _this._onchange = _this._onchange.bind(_this);
         return _this;
@@ -89624,8 +89728,9 @@ var Demo = function (_React$Component) {
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var a = this.props.auth.getProfile(function () {});
             DemoStore.addChangeListener(this._onchange);
-            DemoActionCreator.getTestRides(this.props.userId);
+            DemoActionCreator.getTestRides(a.sub);
         }
     }, {
         key: 'render',

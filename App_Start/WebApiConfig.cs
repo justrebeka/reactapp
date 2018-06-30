@@ -14,6 +14,7 @@ namespace ReactApp
 
             var cors = new EnableCorsAttribute("http://localhost:8080", "*", "*");
             config.EnableCors(cors);
+      
             // Web API routes
             config.MapHttpAttributeRoutes();
 

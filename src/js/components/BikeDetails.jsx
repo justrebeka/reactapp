@@ -10,6 +10,7 @@ export default class BikeDetails extends React.Component {
     }
 
     render() {
+         
         return (
             <div>
                  <Modal
@@ -54,12 +55,14 @@ export default class BikeDetails extends React.Component {
                         <div className='col-xs-1'>
                             <Button className='btn btn-primary' onClick={this.props.closeModal}>Back</Button>
                         </div>
-                        <div className='col-xs-1'>
-                            <Button className='btn btn-danger pull-right' onClick={this.props.order} >Order</Button>
-                        </div>
-                        <div className='col-xs-1'>
-                            <Button className='btn btn-danger' onClick={this.props.testBike}>Test Ride</Button>
-                        </div>
+                        {!!this.props.isAuthenticated && (
+                            <div className='col-xs-1'>
+                                <Button className='btn btn-danger pull-right' onClick={this.props.order} >Order</Button>
+                            </div>)}
+                        {!!this.props.isAuthenticated && (
+                            <div className='col-xs-1'>
+                                <Button className='btn btn-danger' onClick={this.props.testBike}>Test Ride</Button>
+                            </div>)}
                     
                     </div>
                     

@@ -20,8 +20,7 @@ namespace ReactApp.Presentation.Model
             {
                 Id = order.Id,
                 Date = order.Date,
-                Status = order.Status,
-                Product = order.Bike.Model
+                Status = order.Status
             };
 
         }

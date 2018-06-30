@@ -26,7 +26,6 @@ namespace ReactApp.Data.Model
                 Number = bike.Number,
                 Date = bike.Date,
                 Status = bike.Status,
-                Bike = Bike.ToBusiness(bike.Bike),
                 UserId = bike.UserId
 
             };

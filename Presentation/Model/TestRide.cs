@@ -8,8 +8,9 @@ namespace ReactApp.Presentation.Model
     public class TestRide
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public string Name { get; set; }
+        public string UserId { get; set; }
+        public int BikeId { get; set; }
+        public string Number { get; set; }
         public string Status { get; set; }
 
 
@@ -18,9 +19,8 @@ namespace ReactApp.Presentation.Model
             return new ReactApp.Presentation.Model.TestRide()
             {
                 Id = testRide.Id,
-                Name = testRide.Name,
+                Number = testRide.Number,
                 Status = testRide.Status
-
 
             };
 

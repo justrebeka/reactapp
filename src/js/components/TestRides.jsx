@@ -10,8 +10,9 @@ import Griddle, { plugins, RowDefinition, ColumnDefinition } from 'griddle-react
 export default class Demo extends React.Component {
     constructor(props) {
         super(props);
+        var a = props.auth.getProfile(() => { });
         this.state = {
-            testRides: DemoStore.getTestRides(props.userId)
+            testRides:  []
         };
         this._onchange = this._onchange.bind(this);
     }
@@ -25,8 +26,9 @@ export default class Demo extends React.Component {
     }
 
     componentDidMount() {
+        var a = this.props.auth.getProfile(() => { });
         DemoStore.addChangeListener(this._onchange);
-        DemoActionCreator.getTestRides(this.props.userId);
+        DemoActionCreator.getTestRides(a.sub);
 
     }
 

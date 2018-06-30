@@ -1,4 +1,5 @@
 ﻿using ReactApp.Business.Logic;
+using ReactApp.Presentation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,20 @@ namespace ReactApp.Presentation.Controllers
 
 
         // GET api/bike
-        public IEnumerable<ReactApp.Presentation.Model.TestRide> GetTestRidesForUser(int userId = 1)
+        public IEnumerable<ReactApp.Presentation.Model.TestRide> GetTestRidesForUser(string accessKey)
         {
-            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-
-            var testRides = testRideManager.GetTestRidesForUser(userId);
+            var testRides = testRideManager.GetTestRidesForUser(accessKey);
 
             return testRides.Select(b => Presentation.Model.TestRide.FromDomainEntity(b));
 
+        }
+
+
+        [HttpPost]
+        public IHttpActionResult Post([FromBody]TestRide testRide)
+        {
+            testRideManager.CreateTestRide(testRide.UserId, testRide.BikeId);
+            return Ok();
         }
 
     }

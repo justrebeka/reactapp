@@ -16,8 +16,9 @@ module.exports = {
     },
     getTestRides: function (userId) {
 
-        request.get('http://localhost:3039/api/TestRide/' + userId)
+        request.get('http://localhost:3039/api/TestRide')
             .set('Accept', 'application/json')
+            .query({ accessKey: userId })
             .end(function (err, response) {
                 if (err) return console.error(err);
 
@@ -26,8 +27,9 @@ module.exports = {
     },
     getOrders: function (userId) {
 
-        request.get('http://localhost:3039/api/Order/' + userId)
+        request.get('http://localhost:3039/api/Order')
             .set('Accept', 'application/json')
+            .query({ accessKey: userId })
             .end(function (err, response) {
                 if (err) return console.error(err);
 
@@ -39,11 +41,6 @@ module.exports = {
         request
             .post('http://localhost:3039/api/Order')
             .send({ userId: userId, bikeId: bikeId })
-            .withCredentials()
-            .set('Access-Control-Allow-Origin', 'http://localhost:8080')
-            .set('Access-Control-Allow-Methods', 'POST')
-            .set('Access-Control-Allow-Credentials', true)
-            .set('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization')
             .then(function (res) {
                 DemoServerActionCreator.receiveCreateOrderResponse(response.body);
             });
@@ -53,7 +50,7 @@ module.exports = {
 
         request
             .post('http://localhost:3039/api/TestRide')
-            .send({ userId: userId, bikeId: bikeId , date:date})
+            .send({ userId: userId, bikeId: bikeId})
             .set('Accept', 'application/json')
             .then(function (res) {
                 DemoServerActionCreator.receiveTestBikeResponse(response.body);

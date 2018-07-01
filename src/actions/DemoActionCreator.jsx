@@ -33,12 +33,12 @@ var DemoActionCreator = {
 
         DemoApi.createOrder(userId, bikeId);
     },
-    testBike: function (userId, bikeId, date) {
+    testBike: function (userId, bikeId) {
         Dispatcher.handleViewAction({
             actionType: ActionTypes.TEST_BIKE,
         });
 
-        DemoApi.testBike(userId, bikeId, date);
+        DemoApi.testBike(userId, bikeId);
     },
 
 };

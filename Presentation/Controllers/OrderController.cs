@@ -25,9 +25,7 @@ namespace ReactApp.Presentation.Controllers
         // GET api/bike
         public IEnumerable<ReactApp.Presentation.Model.Order> GetOrdersForUser(string accessKey)
         {
-            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-
-            var orders = orderManager.GetOrdersForUser(accessKey);
+           var orders = orderManager.GetOrdersForUser(accessKey);
 
             return orders.Select(b => Presentation.Model.Order.FromDomainEntity(b));
 

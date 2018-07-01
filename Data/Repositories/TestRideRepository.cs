@@ -6,14 +6,14 @@ namespace ReactApp.Data
 {
     public class TestRideRepository
     {
-        public List<Business.Model.TestRide> GetTestRidesForUser(int userId)
+        public List<Business.Model.TestRide> GetTestRidesForUser(string accessKey)
         {
             var testrides = new List<Data.Model.TestRide>();
             using (var db = new BikeShopContext())
             {
                 // Display all TestRides from the database 
                 testrides = (from b in db.TestRides
-                             where b.UserId == userId
+                             where b.UserId == accessKey
                              orderby b.Id
                          select b).ToList();
 
@@ -30,8 +30,9 @@ namespace ReactApp.Data
         {
             using (var db = new BikeShopContext())
             {
+                var dbEntity = Business.Model.TestRide.ToDataEntity(testride);
                 // Create and save a new TestRide               
-                db.TestRides.Add(new Data.Model.TestRide { Id = testride.Id});
+                db.TestRides.Add(dbEntity);
                 db.SaveChanges();
             }
         }

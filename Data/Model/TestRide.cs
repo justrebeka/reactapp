@@ -9,13 +9,10 @@ namespace ReactApp.Data.Model
     public class TestRide
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int BikeId { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
-
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
 
         [ForeignKey("BikeId")]
         public virtual Bike Bike { get; set; }
@@ -26,7 +23,7 @@ namespace ReactApp.Data.Model
             {
                 Id = bike.Id,
                 UserId = bike.UserId,
-                Name = bike.Name,
+                Number = bike.Name,
                 Status = bike.Status
 
             };

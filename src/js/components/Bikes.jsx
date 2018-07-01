@@ -32,21 +32,16 @@ export default class Demo extends React.Component {
         this.setState({ bike: rowData });
     }
 
-    orderCallback(err, profile) {
-        console.log(profile.sub);
-
-        }
-
     order(bikeId) {
 
-        var a = this.props.auth.getProfile(this.orderCallback);
+        var a = this.props.auth.getProfile(() => { });
         DemoActionCreator.createOrder(a.sub, bikeId);        
     }
 
     testBike(bikeId) {
 
         var a = this.props.auth.getProfile(() => { });
-        DemoActionCreator.testBike(a.sub, bikeId, date);
+        DemoActionCreator.testBike(a.sub, bikeId);
     }
 
     afterOpenModal() {
@@ -120,7 +115,7 @@ export default class Demo extends React.Component {
                     onClick={() => this.openModal.bind(this)({ value, griddleKey, rowData })}> View details</Button>
                 </div>;
        
-
+        const { isAuthenticated } = this.props.auth;
         return (
             <div className="jumbotron">
                 <Griddle
@@ -141,11 +136,13 @@ export default class Demo extends React.Component {
                     </RowDefinition>
                 </Griddle>
                 {!!this.state.bike && (<BikeDetails
+                    isAuthenticated={isAuthenticated}
                     bike={this.state.bike}
                     onAfterOpen={this.afterOpenModal}
                     closeModal={this.closeModal}
                     order={() => this.order.bind(this)(this.state.bike.Id)}
-                        contentLabel="Bike details"
+                    testBike={() => this.testBike.bind(this)(this.state.bike.Id)}
+                    contentLabel="Bike details"
                     ></BikeDetails>)}
             </div>);
 

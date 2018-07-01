@@ -226,10 +226,6 @@
     <Compile Include="Migrations\201806261429264_UserMigration.Designer.cs">
       <DependentUpon>201806261429264_UserMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806302119149_UpdateUserIdOnTestRide.cs" />
-    <Compile Include="Migrations\201806302119149_UpdateUserIdOnTestRide.Designer.cs">
-      <DependentUpon>201806302119149_UpdateUserIdOnTestRide.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\OrderController.cs" />
     <Compile Include="Presentation\Controllers\TestRideController.cs" />
@@ -303,9 +299,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806261429264_UserMigration.resx">
       <DependentUpon>201806261429264_UserMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806302119149_UpdateUserIdOnTestRide.resx">
-      <DependentUpon>201806302119149_UpdateUserIdOnTestRide.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

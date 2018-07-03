@@ -84,7 +84,6 @@ gulp.task('js', function () {
         .pipe(conn.reload());
 });
 
-
 gulp.task('watch', function () {
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.js, ['js']);

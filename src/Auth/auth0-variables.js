@@ -1,6 +1,6 @@
 export const AUTH_CONFIG = {
-    domain: 'llaurentiu.eu.auth0.com',
-    clientId: 'NnGSj3zYLsOzy0PnB7XRkayVOEodiy1K',
+    domain: 'radubike.eu.auth0.com',
+    clientId: 'aabWaMw4otxBt9F1AdxgxBH6Bv0x2Zq6',
     callbackUrl: 'http://localhost:8080/callback'
 }
 

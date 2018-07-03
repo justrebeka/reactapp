@@ -16,16 +16,18 @@ namespace ReactApp.Data.Model
 
         [ForeignKey("BikeId")]
         public virtual Bike Bike { get; set; }
+        public string Model { get; internal set; }
+        public string Image { get; internal set; }
 
-        public static Business.Model.TestRide ToBusiness(TestRide bike)
+        public static Business.Model.TestRide ToBusiness(TestRide testRide)
         {
             return new Business.Model.TestRide()
             {
-                Id = bike.Id,
-                UserId = bike.UserId,
-                Number = bike.Name,
-                Status = bike.Status
-
+                Id = testRide.Id,
+                UserId = testRide.UserId,
+                Number = testRide.Name,
+                Status = testRide.Status,
+                Bike = Bike.ToBusiness(testRide.Bike)
             };
         }
     }

@@ -230,6 +230,10 @@
     <Compile Include="Migrations\201806302119149_UpdateUserIdOnTestRide.Designer.cs">
       <DependentUpon>201806302119149_UpdateUserIdOnTestRide.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807022048341_update model for test ride.cs" />
+    <Compile Include="Migrations\201807022048341_update model for test ride.Designer.cs">
+      <DependentUpon>201807022048341_update model for test ride.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\OrderController.cs" />
     <Compile Include="Presentation\Controllers\TestRideController.cs" />
@@ -267,6 +271,7 @@
     <Content Include="src\history.js" />
     <Content Include="src\Home\Home.js" />
     <Content Include="src\images\logo.png" />
+    <Content Include="src\index.html" />
     <Content Include="src\Index.jsx" />
     <Content Include="src\js\components\App.jsx" />
     <Content Include="src\js\components\BikeDetails.jsx" />
@@ -306,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806302119149_UpdateUserIdOnTestRide.resx">
       <DependentUpon>201806302119149_UpdateUserIdOnTestRide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807022048341_update model for test ride.resx">
+      <DependentUpon>201807022048341_update model for test ride.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,8 @@ namespace ReactApp.Business.Model
         public string Status { get; set; }
         public Bike Bike { get; set; }
         public DateTime Date { get; set; }
+        public string Model { get; internal set; }
+        public string Image { get; internal set; }
 
         public static Data.Model.TestRide ToDataEntity(Business.Model.TestRide bTestRide)
         {
@@ -20,10 +22,12 @@ namespace ReactApp.Business.Model
             {
                 Id = bTestRide.Id,
                 Name = bTestRide.Number,
-              //  Date = bTestRide.Date,
+                //  Date = bTestRide.Date,
                 Status = bTestRide.Status,
                 UserId = bTestRide.UserId,
-                BikeId = bTestRide.Bike.Id
+                BikeId = bTestRide.Bike.Id,
+                Model = bTestRide.Bike.Model,
+                Image = bTestRide.Bike.Image
             };
 
             return testRide;

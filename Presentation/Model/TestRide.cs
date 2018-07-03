@@ -12,6 +12,8 @@ namespace ReactApp.Presentation.Model
         public int BikeId { get; set; }
         public string Number { get; set; }
         public string Status { get; set; }
+        public string Model { get; set; }
+        public string Image { get; set; }
 
 
         public static ReactApp.Presentation.Model.TestRide FromDomainEntity(Business.Model.TestRide testRide)
@@ -20,7 +22,10 @@ namespace ReactApp.Presentation.Model
             {
                 Id = testRide.Id,
                 Number = testRide.Number,
-                Status = testRide.Status
+                Status = testRide.Status,
+                BikeId = testRide.Bike.Id,
+                Model = testRide.Bike.Model,
+                Image = testRide.Bike.Image
 
             };
 

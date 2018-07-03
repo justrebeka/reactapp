@@ -1,7 +1,8 @@
-﻿
+﻿var jQuery = require('../js/jquery.min.js');
 var Dispatcher = require('../dispatcher/AppDispatcher.jsx');
 var DemoApi = require('../api/DemoApi.jsx');
 var ActionTypes = require('../constants/ActionTypes.jsx');
+
 
 var DemoActionCreator = {
     

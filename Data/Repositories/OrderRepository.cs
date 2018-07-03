@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 namespace ReactApp.Data
 {
@@ -12,7 +13,7 @@ namespace ReactApp.Data
             using (var db = new BikeShopContext())
             {
                 // Display all Orders from the database 
-                orders = (from b in db.Orders
+                orders = (from b in db.Orders.Include(o => o.Bike)
                           where b.UserId == userId
                          orderby b.Id
                          select b).ToList();

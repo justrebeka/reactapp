@@ -1,11 +1,9 @@
-﻿
-var request = require('superagent');
+﻿var request = require('superagent');
 var DemoServerActionCreator = require('../actions/DemoServerActionCreator.jsx');
 
 module.exports = {
 
     getBikes: function () {
-       
         request.get('http://localhost:3039/api/Bike')
             .set('Accept', 'application/json')
             .end(function (err, response) {
@@ -42,7 +40,7 @@ module.exports = {
             .post('http://localhost:3039/api/Order')
             .send({ userId: userId, bikeId: bikeId })
             .then(function (res) {
-                DemoServerActionCreator.receiveCreateOrderResponse(response.body);
+                alert('Thank you for your purchase. The order was saved!');
             });
       ;
     },
@@ -53,7 +51,8 @@ module.exports = {
             .send({ userId: userId, bikeId: bikeId})
             .set('Accept', 'application/json')
             .then(function (res) {
-                DemoServerActionCreator.receiveTestBikeResponse(response.body);
+                console.log(res);
+                alert('Thank you for your request. The test ride was saved!');
             });
     }
 };

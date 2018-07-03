@@ -33,9 +33,10 @@ export default class Demo extends React.Component {
     }
 
     order(bikeId) {
-
+        
         var a = this.props.auth.getProfile(() => { });
-        DemoActionCreator.createOrder(a.sub, bikeId);        
+        DemoActionCreator.createOrder(a.sub, bikeId);
+      
     }
 
     testBike(bikeId) {
@@ -54,7 +55,7 @@ export default class Demo extends React.Component {
     }
 
     _onchange() {
-        this.setState({ bikes: DemoStore.getBikes() });
+        this.setState({bikes: DemoStore.getBikes()});
     }
 
     componentWillUnmount() {
@@ -118,6 +119,8 @@ export default class Demo extends React.Component {
         const { isAuthenticated } = this.props.auth;
         return (
             <div className="jumbotron">
+               
+
                 <Griddle
                     data={this.state.bikes}
                     plugins={[plugins.LocalPlugin]}

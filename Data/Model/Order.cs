@@ -18,15 +18,16 @@ namespace ReactApp.Data.Model
         //[ForeignKey("UserId")]
         //public virtual User User { get; set; }
 
-        public static Business.Model.Order ToBusiness(Order bike)
+        public static Business.Model.Order ToBusiness(Order order)
         {
             return new Business.Model.Order()
             {
-                Id = bike.Id,
-                Number = bike.Number,
-                Date = bike.Date,
-                Status = bike.Status,
-                UserId = bike.UserId
+                Id = order.Id,
+                Number = order.Number,
+                Date = order.Date,
+                Status = order.Status,
+                UserId = order.UserId,
+                Bike = Bike.ToBusiness(order.Bike)
 
             };
         }

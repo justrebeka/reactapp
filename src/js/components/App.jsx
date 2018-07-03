@@ -38,7 +38,7 @@ export default class App extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-md-2 col-md-offset-1">
-                        <img src="https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/35884820_618367771871436_3404103268203233280_n.jpg?_nc_cat=0&oh=0871db9ad1996095623af9e9825a997f&oe=5BAA1179" height="100%" width="100%"/>
+                        <img src="https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/35884820_618367771871436_3404103268203233280_n.jpg?_nc_cat=0&oh=0871db9ad1996095623af9e9825a997f&oe=5BAA1179" height="60%" width="60%"/>
                     </div>
                     <div className="col-md-3 col-md-offset-1">
                         <img src="https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/35894289_618431048531775_7586145578954784768_n.jpg?_nc_cat=0&oh=d89e38e6eb277af82b6b0f577fb07704&oe=5BB8060C" height="100%" width="100%"/>
